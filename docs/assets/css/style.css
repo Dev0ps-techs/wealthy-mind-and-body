@@ -1066,3 +1066,5 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 /* Shop card: Be Fit & Flex logo shown whole on black */
 .trio__card:nth-child(3) .trio__img { background: #000; }
 .trio__card:nth-child(3) .trio__img img { object-fit: contain; padding: 6% 0; }
+/* Highlighted labels (army green) */
+.hl { display: inline-block; padding: 1px 9px; margin-right: 2px; border-radius: 6px; background: var(--sage-deep); color: #fff; font-weight: 600; font-size: .9em; letter-spacing: .01em; }
