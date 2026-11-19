@@ -409,7 +409,7 @@ function aboutBand(r) {
   <div class="container split-2">
     <div data-reveal>${videoCard(r, site.introVideo, 'cliff-yoga', 'Watch: 10 minutes of mind & body movement')}</div>
     <div data-reveal style="--d:.1s">
-      <p class="eyebrow">About MBM</p>
+      <p class="eyebrow">All about Wealthy Mind &amp; Body</p>
       <h2 class="h-display">${C.aboutMBM.text}</h2>
       <p>${C.aboutMBM.belief}</p>
       <blockquote class="mission"><span>${C.aboutMBM.missionLabel}</span>${C.aboutMBM.mission}</blockquote>
