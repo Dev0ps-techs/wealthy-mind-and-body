@@ -45,6 +45,9 @@ export const site = {
   facebookAbout: 'https://www.facebook.com/leechance.ngassa/about',
   facebookShare: 'https://www.facebook.com/share/197TY5Ug8i/?mibextid=wwXIfr',
   introVideo: 'Ej4V2iTvoOc',
+  // Homepage About section: this TikTok plays silently; clicking opens the YouTube video.
+  aboutTikTok: '7687105797901372690',
+  aboutYouTube: 'https://youtu.be/Ej4V2iTvoOc',
   empowerVideo: 'MDYtyErvpEY',
 };
 

@@ -410,11 +410,26 @@ function trio(r) {
 </section>`;
 }
 
+// TikTok video shown silently on a loop; the whole card links to the YouTube video.
+function tiktokCard(r) {
+  const params = 'autoplay=1&loop=1&muted=1&controls=0&progress_bar=0&play_button=0&volume_control=0&fullscreen_button=0&timestamp=0&music_info=0&description=0&rel=0&native_context_menu=0&closed_caption=0';
+  const media = PREVIEW
+    ? img(r, 'yoga-pose-blue', '', { sizes: '340px', cls: 'tt-card__still' })
+    : `<iframe src="https://www.tiktok.com/player/v1/${site.aboutTikTok}?${params}" title="Letchance Ngassa on TikTok" loading="lazy" allow="autoplay; encrypted-media" tabindex="-1" aria-hidden="true"></iframe>`;
+  return `
+<a class="tt-card" href="${site.aboutYouTube}" target="_blank" rel="noopener" aria-label="Watch the full video on YouTube">
+  <span class="tt-card__media">${media}</span>
+  <span class="tt-card__shade"></span>
+  <span class="tt-card__play">${icon('play')}</span>
+  <span class="tt-card__label">${icon('youtube')} Watch the full video on YouTube</span>
+</a>`;
+}
+
 function aboutBand(r) {
   return `
 <section class="section about-band">
   <div class="container split-2">
-    <div data-reveal>${videoCard(r, site.introVideo, 'video-mind-body-10min', 'Watch: 30 minutes of full body stretching & flexibility')}</div>
+    <div data-reveal>${tiktokCard(r)}</div>
     <div data-reveal style="--d:.1s">
       <p class="eyebrow">All about Wealthy Mind &amp; Body</p>
       <h2 class="h-display">${C.aboutMBM.text}</h2>
