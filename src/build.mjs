@@ -582,26 +582,7 @@ ${benefitsSection(r)}
     </div>
   </div>
 </section>
-<section class="section pillars-home" id="pillars">
-  <div class="container">
-    <div class="section-head" data-reveal>
-      <p class="eyebrow">The Three Pillars</p>
-      <h2 class="h-display">Mind. Body. <em>Breathwork.</em></h2>
-      <p>${site.positioning}</p>
-    </div>
-    <div class="pillar-cards">
-      ${H.pillars.map((p, i) => `
-      <article class="pillar-card" data-reveal data-tilt style="--d:${i * 0.12}s">
-        <div class="pillar-card__img">${img(r, p.img, '', { sizes: '(min-width: 900px) 33vw, 100vw' })}</div>
-        <div class="pillar-card__body">
-          <span class="pillar-card__emoji" aria-hidden="true">${p.emoji}</span>
-          <h3>${p.key}</h3>
-          <p>${p.text}</p>
-        </div>
-      </article>`).join('')}
-    </div>
-  </div>
-</section>
+
 <section class="section community">
   <div class="container">
     <div class="community__card" data-reveal>
