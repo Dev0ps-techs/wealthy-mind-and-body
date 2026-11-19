@@ -174,7 +174,7 @@ ${base ? `<base href="${base}">` : ''}
     <span class="topbar__left"><span class="w30">For ${site.audience}</span><a class="topbar__live" href="${r}#live"><span class="live-dot"></span> Live every evening · 5:00 PM Dubai time</a></span>
     <span class="topbar__links">
       <a href="tel:${site.phone}">${icon('phone')} ${site.phoneDisplay}</a>
-      <a href="mailto:${site.emails[1]}">${icon('mail')} ${site.emails[1]}</a>
+      <a href="mailto:${site.emails[0]}">${icon('mail')} ${site.emails[0]}</a>
     </span>
   </div>
 </div>
@@ -186,7 +186,7 @@ ${base ? `<base href="${base}">` : ''}
       <ul class="nav__list">${navItems}</ul>
       <div class="nav__mobile-extra">
         <a class="btn btn--primary" href="${r}booking/"><span>Book a session</span>${icon('arrow')}</a>
-        <p><a href="tel:${site.phone}">${site.phoneDisplay}</a><br><a href="mailto:${site.emails[1]}">${site.emails[1]}</a></p>
+        <p><a href="tel:${site.phone}">${site.phoneDisplay}</a><br><a href="mailto:${site.emails[0]}">${site.emails[0]}</a></p>
         <div class="social">${socialLinks()}</div>
       </div>
     </nav>
