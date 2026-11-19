@@ -937,3 +937,13 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 .tt-card:hover { transform: translateY(-6px) rotate(-1deg); }
 .tt-card:hover .tt-card__play, .tt-card:focus-visible .tt-card__play { opacity: 1; transform: none; }
 .about-band .split-2 { align-items: center; }
+
+/* Slides whose photo subject is on the left: text sits on the right */
+.slide--right .slide__content { display: flex; flex-direction: column; align-items: flex-start; padding-left: calc(var(--gutter) + (min(100vw, var(--container)) - 2 * var(--gutter)) * 0.5); }
+.slide--right .slide__shade { background: linear-gradient(260deg, rgba(43, 53, 47, 0.88) 0%, rgba(43, 53, 47, 0.5) 50%, rgba(43, 53, 47, 0.1) 100%); }
+.slide--right .slide__bg img { object-position: 20% 50%; }
+.slide--right .slide__title { font-size: clamp(2.4rem, 5vw, 4.4rem); }
+@media (max-width: 900px) {
+  .slide--right .slide__content { padding-left: var(--gutter); }
+  .slide--right .slide__shade { background: linear-gradient(180deg, rgba(43, 53, 47, .55), rgba(43, 53, 47, .85)); }
+}

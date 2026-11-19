@@ -55,7 +55,8 @@ export const hero = {
   overline: 'Mind and Body Wellness Through Movement, Breathwork, and Coaching',
   slides: [
     {
-      title: 'Discover Balance Through Mindset & Movement',
+      align: 'right', // text on the right so it doesn't cover the person in the photo
+    title: 'Discover Balance Through Mindset & Movement',
       text: 'Our mindset coaching sessions help you develop a more resilient and positive outlook, enabling you to navigate life’s challenges with greater ease.',
       img: 'sunset-tree-pose',
       cta: { label: 'Read More', href: 'about/' },
@@ -535,6 +536,7 @@ export const slides = [
     secondary: { label: 'Join Live Classes', href: '#live' },
   },
   {
+    align: 'right', // text on the right so it doesn't cover the person in the photo
     title: 'Discover Balance Through Mindset & Movement',
     text: 'Our mindset coaching sessions help you develop a more resilient and positive outlook, enabling you to navigate life’s challenges with greater ease.',
     img: 'sunset-tree-pose',
