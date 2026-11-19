@@ -7,7 +7,9 @@ import * as C from './content.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SRC = __dirname;
-const OUT = path.resolve(__dirname, '..', 'docs');
+// PREVIEW=1 builds a copy for a claude.ai preview page: explicit index.html links, YouTube opens in a new tab.
+const PREVIEW = !!process.env.PREVIEW;
+const OUT = path.resolve(__dirname, '..', PREVIEW ? 'docs-preview' : 'docs');
 // Absolute base path where the site is hosted. Used only by 404.html, which
 // GitHub Pages serves from any URL depth. Set BASE=/ when using a custom domain.
 const BASE = process.env.BASE ?? '/wealthy-mind-and-body/';
@@ -182,7 +184,7 @@ ${base ? `<base href="${base}">` : ''}
 ${body}
 </main>
 ${footer(r)}
-<a class="wa-float" href="https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hi Leechance! I’d like to know more about your sessions.')}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">${icon('whatsapp')}</a>
+<a class="wa-float" href="https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hi Letchance! I’d like to know more about your sessions.')}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">${icon('whatsapp')}</a>
 <button class="to-top" aria-label="Back to top">${icon('up')}</button>
 <dialog class="video-modal" aria-label="Video">
   <div class="video-modal__frame"></div>
@@ -270,7 +272,12 @@ const pageHero = (r, { eyebrow, title, text = '', imgName, crumbs = [] }) => `
   </div>
 </section>`;
 
-const videoCard = (r, id, cover, label = 'Play video') => `
+const videoCard = (r, id, cover, label = 'Play video') => PREVIEW ? `
+<a class="video-card" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener" aria-label="${esc(label)} (opens YouTube)">
+  ${img(r, cover, '', { sizes: '(min-width: 900px) 50vw, 100vw' })}
+  <span class="video-card__play">${icon('play')}</span>
+  <span class="video-card__label">${label}</span>
+</a>` : `
 <button class="video-card" data-video="${id}" aria-label="${esc(label)}">
   ${img(r, cover, '', { sizes: '(min-width: 900px) 50vw, 100vw' })}
   <span class="video-card__play">${icon('play')}</span>
@@ -946,6 +953,14 @@ function notFound(r) {
 
 /* ---------------- write ---------------- */
 function write(rel, html) {
+  if (PREVIEW && rel.endsWith('.html')) {
+    html = html.replace(/href="(\.{1,2}\/[^"]*|[a-z0-9-]+\/[^"]*|)"/g, (m, u) => {
+      if (/^(https?:|mailto:|tel:|#)/.test(u) || u.includes('assets/')) return m;
+      const cut = u.search(/[?#]/);
+      const [p, rest] = cut < 0 ? [u, ''] : [u.slice(0, cut), u.slice(cut)];
+      return p === '' || p.endsWith('/') ? `href="${p}index.html${rest}"` : m;
+    });
+  }
   const file = path.join(OUT, rel);
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, html);
@@ -988,7 +1003,7 @@ const redirects = {
   ...Object.fromEntries(C.posts.filter((p) => p.slug !== 'mind-and-body-movements-10-minutes').map((p) => [p.slug, `blog/${p.slug}/`])),
 };
 for (const [from, to] of Object.entries(redirects)) {
-  if (to === null) continue;
+  if (to === null || PREVIEW) continue;
   const target = '../' + to;
   write(`${from}/index.html`, `<!doctype html><meta charset="utf-8"><title>Redirecting…</title><meta name="robots" content="noindex"><link rel="canonical" href="${site.url}/${to}"><meta http-equiv="refresh" content="0; url=${target}"><a href="${target}">Continue</a>`);
 }
