@@ -1085,3 +1085,8 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 .mission { background: linear-gradient(135deg, #cf8399 0%, #b65f7c 55%, #a3405f 100%); color: #fff; }
 .mission span { color: #fff; opacity: .9; }
 .mission::after { color: rgba(255, 255, 255, .28); }
+/* Mission statement: dark military green */
+.mission { background: linear-gradient(135deg, #3a5642 0%, #2c4634 55%, #223829 100%); color: #fff; box-shadow: 0 16px 34px -18px rgba(34, 56, 41, .7); }
+.mission::before { background: var(--rose); opacity: 1; }
+.mission span { color: var(--rose-glow); opacity: 1; }
+.mission::after { color: rgba(255, 255, 255, .18); }
