@@ -700,7 +700,7 @@ ${pageHero(r, { eyebrow: A.missionLabel, title: A.mission, text: A.belief, imgNa
       <p>${A.wellness}</p>
       <div class="founder">
         ${img(r, 'letchance-ngassa', site.owner, { cls: 'founder__img', sizes: '72px' })}
-        <div><strong>${site.owner}</strong><span>Founder · Mindset Coach & Yoga Teacher</span></div>
+        <div><strong>${site.owner}</strong><span>Founder · Wealthy Mind &amp; Body</span></div>
       </div>
     </div>
   </div>
