@@ -1081,3 +1081,7 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 /* Header logo: dark green */
 .header .wordmark { color: #2c4634; }
 .header .wordmark small { color: #2c4634; opacity: .8; }
+/* Mission statement: white text on a deeper rose */
+.mission { background: linear-gradient(135deg, #cf8399 0%, #b65f7c 55%, #a3405f 100%); color: #fff; }
+.mission span { color: #fff; opacity: .9; }
+.mission::after { color: rgba(255, 255, 255, .28); }
