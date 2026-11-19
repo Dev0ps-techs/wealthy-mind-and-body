@@ -1046,3 +1046,9 @@ html.is-loading, html.is-loading body { overflow: hidden; }
   .slide--framed .slide__frame { transform: none; border-width: 6px; border-radius: 22px; }
 }
 .w30--footer { white-space: normal; width: auto; }
+/* Framed slide: picture takes half of the slide */
+@media (min-width: 901px) {
+  .slide--framed .slide__split { grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 56px); }
+  .slide--framed .slide__photo { padding-bottom: 72px; }
+  .slide--framed .slide__frame { margin-inline: auto 0; }
+}
