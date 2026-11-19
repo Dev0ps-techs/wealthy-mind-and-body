@@ -548,20 +548,20 @@ export const slides = [
     primary: { label: 'Read More', href: 'about/' },
   },
   {
-    title: 'Empower your Mind and Body',
-    text: 'Unleash your spirit, conquer challenges and embark on an exhilarating journey to a vibrant joyful life',
-    img: 'dream-big-skydive',
-    valign: 'bottom', // full background; text sits low so the "Dream big" caption at the top stays clear
-    imgAlt: 'Dream big, the sky is your limit! Letchance Ngassa skydiving over the Palm Jumeirah, Dubai',
-    primary: { label: 'Read More', href: 'https://youtu.be/MDYtyErvpEY?si=YoP5vo47C2evWmIb' },
-  },
-  {
     title: 'Stay Fit from a Young Age',
     text: 'Introduce your child to the benefits of yoga and set them on the path to a healthy, active life. Our children’s yoga classes are designed to improve flexibility, strength, and coordination while promoting mindfulness and emotional balance.',
     img: 'kids-yoga-collage',
     framed: true, // whole collage shown in a frame on the army green background
     imgAlt: 'Collage of two children doing partner yoga poses in a Dubai park',
     primary: { label: 'Read More', href: 'https://www.youtube.com/@leechancekidsyoga4170' },
+  },
+  {
+    title: 'Empower your Mind and Body',
+    text: 'Unleash your spirit, conquer challenges and embark on an exhilarating journey to a vibrant joyful life',
+    img: 'dream-big-skydive',
+    valign: 'bottom', // full background; text sits low so the "Dream big" caption at the top stays clear
+    imgAlt: 'Dream big, the sky is your limit! Letchance Ngassa skydiving over the Palm Jumeirah, Dubai',
+    primary: { label: 'Read More', href: 'https://youtu.be/MDYtyErvpEY?si=YoP5vo47C2evWmIb' },
   },
 ];
 
