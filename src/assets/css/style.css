@@ -1068,3 +1068,6 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 .trio__card:nth-child(3) .trio__img img { object-fit: contain; padding: 6% 0; }
 /* Highlighted labels (army green) */
 .hl { display: inline-block; padding: 1px 9px; margin-right: 2px; border-radius: 6px; background: var(--sage-deep); color: #fff; font-weight: 600; font-size: .9em; letter-spacing: .01em; }
+/* Header logo: army green instead of near-black */
+.header .wordmark { color: var(--sage); }
+.header .wordmark small { color: var(--sage); opacity: .75; }
