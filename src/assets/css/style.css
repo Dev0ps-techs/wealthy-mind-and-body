@@ -903,3 +903,6 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .slide__content > *, .slide__photo { opacity: 1 !important; transform: none !important; }
 }
+
+/* Explore cards sit close under the carousel */
+#explore { padding-top: clamp(28px, 4vw, 48px); }
