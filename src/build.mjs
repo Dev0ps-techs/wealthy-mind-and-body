@@ -504,7 +504,7 @@ ${trio(r)}
       <div class="meet__sig" data-parallax="-0.06">Coaching for ${site.audience}</div>
     </div>
     <div data-reveal style="--d:.1s">
-      <p class="eyebrow">${H.meet.eyebrow}</p>
+      <p class="eyebrow eyebrow--strong">${H.meet.eyebrow}</p>
       <h2 class="h-display meet__name">${H.meet.title}</h2>
       <p class="meet__role">${H.meet.subtitle}</p>
       ${H.meet.story.map((p) => `<p>${p}</p>`).join('')}
