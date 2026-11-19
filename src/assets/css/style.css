@@ -1063,3 +1063,6 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 .mission::after { content: '“'; position: absolute; right: 18px; top: -18px; font-family: var(--font-display); font-size: 7rem; line-height: 1; color: rgba(255, 255, 255, .35); }
 .mission span { color: var(--sage-ink); opacity: .8; }
 .mission + .btn { margin-top: 26px; }
+/* Shop card: Be Fit & Flex logo shown whole on black */
+.trio__card:nth-child(3) .trio__img { background: #000; }
+.trio__card:nth-child(3) .trio__img img { object-fit: contain; padding: 6% 0; }
