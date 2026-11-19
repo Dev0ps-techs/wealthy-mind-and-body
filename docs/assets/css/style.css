@@ -1056,3 +1056,10 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 /* Program cards: tags follow the text; only the link sits at the bottom */
 .program-card p { flex: none; }
 .program-card .link-arrow { margin-top: auto; }
+
+/* Mission statement: signature rose card */
+.mission { position: relative; overflow: hidden; border-left: 0; border-radius: 18px; padding: 22px 26px 22px 30px; background: var(--rose-grad); color: var(--sage-ink); box-shadow: 0 16px 34px -18px rgba(163, 64, 95, .65); }
+.mission::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--sage-ink); opacity: .85; }
+.mission::after { content: '“'; position: absolute; right: 18px; top: -18px; font-family: var(--font-display); font-size: 7rem; line-height: 1; color: rgba(255, 255, 255, .35); }
+.mission span { color: var(--sage-ink); opacity: .8; }
+.mission + .btn { margin-top: 26px; }
