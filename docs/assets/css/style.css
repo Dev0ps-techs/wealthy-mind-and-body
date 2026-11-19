@@ -1074,3 +1074,7 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 /* Blog card "Read More": rose button to match the other two cards */
 .trio__card:first-child .trio__body .link-arrow { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; border-radius: 14px; background: var(--rose-grad); color: var(--sage-ink); font-size: 1rem; border: 1px solid #cc7b92; box-shadow: 0 10px 24px -14px rgba(163, 64, 95, .55); text-decoration: none; transition: filter .3s; }
 .trio__card:first-child .trio__body .link-arrow:hover { filter: brightness(1.05); }
+
+/* Services page: six services in a 3 x 2 grid */
+@media (min-width: 901px) { .svc:nth-child(4), .svc:nth-child(5) { grid-column: span 2; } }
+@media (max-width: 900px) { .svc:nth-child(5) { grid-column: auto; } }

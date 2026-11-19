@@ -587,4 +587,8 @@ export const serviceMenu = [
     id: 'private-classes', title: 'Private Classes', img: 'prenatal-yoga', icon: 'star',
     text: 'Personalized one-on-one sessions tailored to your goals, brought to the comfort of your home or wherever you are.',
   },
+  {
+    id: 'workshops-events', title: 'Workshops, Seminars, Trainings & Events', img: 'services-stage-selfie', icon: 'easel',
+    text: 'Interactive workshops, seminars, trainings and wellness events that inspire growth, teach practical skills and share valuable insights, for schools, corporates and communities, in person across the UAE and online.',
+  },
 ];
