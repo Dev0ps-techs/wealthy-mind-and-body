@@ -947,3 +947,30 @@ html.is-loading, html.is-loading body { overflow: hidden; }
   .slide--right .slide__content { padding-left: var(--gutter); }
   .slide--right .slide__shade { background: linear-gradient(180deg, rgba(43, 53, 47, .55), rgba(43, 53, 47, .85)); }
 }
+
+/* =========================================================
+   Refined rose palette (professional dusty rose)
+   ========================================================= */
+:root {
+  --rose: #d6869d;        /* main rose: buttons, badges, fills (dark text on top) */
+  --rose-deep: #a3405f;   /* rosewood: pink text on light backgrounds */
+  --rose-soft: #f2d5de;   /* soft tints, chips */
+  --rose-glow: #f2b8c8;   /* pink text on the dark green sections */
+  --blush: #fbf2f5;       /* blush panels */
+  --sand: #f9eef2;        /* blush section backgrounds */
+  --rose-grad: linear-gradient(135deg, #e7a6b7 0%, #d6869d 55%, #c26f88 100%);
+}
+.btn--rose { --bg: var(--rose-grad); --bd: #cc7b92; box-shadow: 0 10px 24px -12px rgba(163, 64, 95, .55); }
+.w30 { background: var(--rose-grad); box-shadow: 0 6px 16px -8px rgba(163, 64, 95, .6); }
+.w30--lg { background: var(--sage-ink); box-shadow: none; }
+.w30--lg::before { color: var(--rose-glow); }
+.icon-badge--light, .ticks .icon, .svc__body .icon-badge, .hero__arrow:hover { background: var(--rose-grad); }
+/* Pink text that sits on dark green uses the lighter rose so it stays readable */
+.eyebrow--light, .section--forest .h-display em, .breathe-section .h-display em, .live__time, .live__label,
+.upcoming li span:last-child, .yt-link .icon, .store .link-arrow, .solution .link-arrow, .footer__tag,
+.footer__contact .icon, .footer a:hover, .stars, .hero__dot i, .logo--light .wordmark em, .loader, .loader__name .wordmark em { color: var(--rose-glow); }
+.hero__dot i { background: var(--rose-glow); }
+.progress { background: var(--rose-grad); }
+.slide__note, .wordmark em, .meet__role { color: var(--rose-deep); }
+.t-dot.is-active { background: var(--rose-deep); }
+.mission { border-left-color: var(--rose-deep); }
