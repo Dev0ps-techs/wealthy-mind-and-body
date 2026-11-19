@@ -409,14 +409,14 @@ function trio(r) {
 }
 
 // TikTok video shown silently on a loop; the whole card links to the YouTube video.
+// Thumbnail picture; on the live site the TikTok fades in and plays silently on hover.
+// Clicking anywhere opens the YouTube video.
 function tiktokCard(r) {
   const params = 'autoplay=1&loop=1&muted=1&controls=0&progress_bar=0&play_button=0&volume_control=0&fullscreen_button=0&timestamp=0&music_info=0&description=0&rel=0&native_context_menu=0&closed_caption=0';
-  const media = PREVIEW
-    ? img(r, 'yoga-pose-blue', '', { sizes: '340px', cls: 'tt-card__still' })
-    : `<iframe src="https://www.tiktok.com/player/v1/${site.aboutTikTok}?${params}" title="Letchance Ngassa on TikTok" loading="lazy" allow="autoplay; encrypted-media" tabindex="-1" aria-hidden="true"></iframe>`;
+  const tt = PREVIEW ? '' : ` data-tiktok="https://www.tiktok.com/player/v1/${site.aboutTikTok}?${params}"`;
   return `
-<a class="tt-card" href="${site.aboutYouTube}" target="_blank" rel="noopener" aria-label="Watch the full video on YouTube">
-  <span class="tt-card__media">${media}</span>
+<a class="tt-card" href="${site.aboutYouTube}" target="_blank" rel="noopener" aria-label="Watch the full video on YouTube"${tt}>
+  <span class="tt-card__media">${img(r, 'move-breath-stretch-thrive', 'Move. Breath. Stretch. Thrive. Letchance Ngassa in a split pose with the Dubai skyline', { sizes: '340px' })}</span>
   <span class="tt-card__shade"></span>
   <span class="tt-card__play">${icon('play')}</span>
   <span class="tt-card__label">${icon('youtube')} Watch the full video on YouTube</span>

@@ -987,3 +987,9 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 .offer .offer__card:nth-child(5):last-child .icon-badge { grid-row: span 2; }
 .offer .offer__card:nth-child(5):last-child h3 { margin-top: 6px; }
 @media (max-width: 600px) { .offer .offer__card:nth-child(5):last-child { display: block; } .offer .offer__card:nth-child(5):last-child h3 { margin-top: 22px; } }
+
+/* About card: picture thumbnail with the TikTok fading in on hover */
+.tt-card { aspect-ratio: 909 / 1397; }
+.tt-card__media iframe { opacity: 0; transition: opacity .6s var(--ease); background: #000; }
+.tt-card.is-playing .tt-card__media iframe { opacity: 1; }
+.tt-card__shade { background: linear-gradient(180deg, transparent 65%, rgba(43, 53, 47, .7)); }

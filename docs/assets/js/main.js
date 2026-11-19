@@ -166,6 +166,26 @@
     d.addEventListener('click', (e) => { if (e.target === d || e.target.closest('.video-modal__close')) closeDialog(d); });
   });
 
+  /* ---------- About card: TikTok plays over the thumbnail on hover ---------- */
+  $$('[data-tiktok]').forEach((card) => {
+    if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    let frame = null, t;
+    card.addEventListener('mouseenter', () => {
+      clearTimeout(t);
+      if (!frame) {
+        frame = document.createElement('iframe');
+        frame.src = card.dataset.tiktok;
+        frame.title = 'Letchance Ngassa on TikTok';
+        frame.allow = 'autoplay; encrypted-media';
+        frame.tabIndex = -1;
+        frame.setAttribute('aria-hidden', 'true');
+        frame.addEventListener('load', () => card.matches(':hover') && card.classList.add('is-playing'));
+        $('.tt-card__media', card).append(frame);
+      } else card.classList.add('is-playing');
+    });
+    card.addEventListener('mouseleave', () => { t = setTimeout(() => card.classList.remove('is-playing'), 150); });
+  });
+
   /* ---------- homepage hero carousel ---------- */
   const hero = $('[data-hero]');
   if (hero) {
