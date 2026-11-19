@@ -544,7 +544,7 @@ export const slides = [
     align: 'right', // text on the right so it doesn't cover the person in the photo
     title: 'Discover Balance Through Mindset & Movement',
     text: 'Our mindset coaching sessions help you develop a more resilient and positive outlook, enabling you to navigate life’s challenges with greater ease.',
-    img: 'sunset-tree-pose',
+    img: 'dubai-skyline-sunset-balance',
     primary: { label: 'Read More', href: 'about/' },
   },
   {
