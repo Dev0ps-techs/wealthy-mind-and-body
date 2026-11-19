@@ -408,7 +408,7 @@ function trio(r) {
   const cards = [
     { t: 'Blog', img: 'blog-quote-inquiry-mind', text: 'Articles, guided videos, daily mindset quotes, and healthy eating advice and guidance to support your practice between sessions.', foot: `<a class="link-arrow" href="${r}blog/">Read More ${icon('arrow')}</a>`, href: 'blog/' },
     { t: 'Services', img: 'services-stage-selfie', text: C.services.intro, foot: menu('Choose a service', serviceLinks), href: 'services/' },
-    { t: 'Shop', img: 'shop-collage', text: 'Wellness essentials, active wear, ebooks and digital programs.', foot: menu('Choose a store', shopLinks), href: 'shop/' },
+    { t: 'Shop', img: 'shop-collage', text: 'Physical products such as active wear from our Be Fit & Flex clothing brand and wellness essentials, plus ebooks and digital programs.', foot: menu('Choose a store', shopLinks), href: 'shop/' },
   ];
   return `
 <section class="section intro" id="explore" aria-label="Explore">
