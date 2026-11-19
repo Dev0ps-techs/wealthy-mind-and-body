@@ -129,7 +129,7 @@ export const offer = {
     {
       icon: 'movePose',
       title: 'Mind & Body Movement Sequences',
-      text: 'Yoga and fitness combined to strengthen the body and improve flexibility: Hatha, Yin, Prenatal, Vinyasa, Calisthenics, Wall Pilates and Children’s Yoga.',
+      text: 'Yoga and fitness combined to strengthen the body and improve flexibility: Hatha, Yin, Prenatal, Vinyasa, Stretching, Calisthenics, Wall Pilates and Children’s Yoga.',
     },
     {
       icon: 'lungs',
@@ -475,7 +475,7 @@ export const home = {
     {
       title: 'Mind & Body Movement',
       text: 'Daily movement sessions promoting strength, mobility and wellbeing.',
-      points: ['Hatha Yoga', 'Yin Yoga', 'Prenatal Yoga', 'Vinyasa', 'Calisthenics', 'Wall Pilates', 'Children Yoga'],
+      points: ['Hatha Yoga', 'Yin Yoga', 'Prenatal Yoga', 'Vinyasa', 'Stretching', 'Calisthenics', 'Wall Pilates', 'Children Yoga'],
       img: 'wheel-pose-benefits', icon: 'stretch', service: 'Mind & Body Movement Sequences',
     },
     {
@@ -569,7 +569,7 @@ export const serviceMenu = [
   },
   {
     id: 'movement-sequences', title: 'Mind & Body Movement Sequences', img: 'yogafit-collage', icon: 'stretch',
-    text: 'Discover the perfect blend of strength, flexibility, and tranquility: Hatha Yoga, Yin Yoga, Prenatal Yoga, Vinyasa, Calisthenics, Wall Pilates and playful Children’s Yoga.',
+    text: 'Discover the perfect blend of strength, flexibility, and tranquility: Hatha Yoga, Yin Yoga, Prenatal Yoga, Vinyasa, Stretching, Calisthenics, Wall Pilates and playful Children’s Yoga.',
   },
   {
     id: 'breathwork', title: 'Breathwork Sessions', img: 'meditation-sunset', icon: 'breath',
