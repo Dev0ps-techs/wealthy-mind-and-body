@@ -1078,3 +1078,6 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 /* Services page: six services in a 3 x 2 grid */
 @media (min-width: 901px) { .svc:nth-child(4), .svc:nth-child(5) { grid-column: span 2; } }
 @media (max-width: 900px) { .svc:nth-child(5) { grid-column: auto; } }
+/* Header logo: dark green */
+.header .wordmark { color: #2c4634; }
+.header .wordmark small { color: #2c4634; opacity: .8; }
