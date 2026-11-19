@@ -24,7 +24,7 @@ export const site = {
   phone: '+971552807783',
   phoneDisplay: '(+971) 55 280 7783',
   whatsapp: '971552807783',
-  emails: ['leechance_n@mbm.tips', 'leechancengassa@gmail.com', 'info@mbm.tips'],
+  emails: ['letchancengass@gmail.com', 'leechancengassa@gmail.com', 'info@mbm.tips'],
   description:
     'For women 30+: where modern wellness meets mind, body & soul transformation. Mindset mastery, mindful movement and soulful living with Letchance Ngassa — live daily, online worldwide and in person in Dubai. Mind and body wellness through movement, breathwork and coaching in Dubai, UAE. Mindset coaching, YogaFit, Hatha, Prenatal, Yin and Children’s Yoga — in person across the UAE and online worldwide.',
   about:

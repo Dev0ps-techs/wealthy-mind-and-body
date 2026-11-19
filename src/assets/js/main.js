@@ -3,7 +3,7 @@
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => [...c.querySelectorAll(s)];
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const CONTACT = { email: 'leechance_n@mbm.tips', whatsapp: '971552807783' };
+  const CONTACT = { email: 'letchancengass@gmail.com', whatsapp: '971552807783' };
   const FORM_ENDPOINT = ''; // optional: Formspree/Mailchimp endpoint to collect sign-ups directly
 
   /* ---------- toast ---------- */
