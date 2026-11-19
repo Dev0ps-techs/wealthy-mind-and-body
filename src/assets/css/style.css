@@ -921,3 +921,4 @@ html.is-loading, html.is-loading body { overflow: hidden; }
   .offer .section-head { position: static; }
 }
 @media (max-width: 600px) { .offer .offer__grid { grid-template-columns: 1fr; } }
+.meet__frame img { object-position: 50% 20%; }

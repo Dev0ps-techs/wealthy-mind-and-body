@@ -453,7 +453,7 @@ export const home = {
       'I believe in the transformative power of body movement and self-discovery to unlock your potential and elevate your well-being. True wellness is not just about physical health, but a harmonious balance of the mind, body, and spirit.',
       'My approach combines mindset coaching with yoga, breathwork and mindful movement — so you can build confidence, find calm, and feel at home in your body again.',
     ],
-    img: 'leechance-portrait',
+    img: 'letchance-ngassa',
     cta: { label: 'Read My Story', href: 'about/' },
   },
   programs: [
