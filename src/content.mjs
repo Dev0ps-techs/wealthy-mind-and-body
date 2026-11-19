@@ -138,8 +138,8 @@ export const offer = {
     },
     {
       icon: 'easel',
-      title: 'Workshops, Trainings & Seminars',
-      text: 'Interactive workshops, trainings and seminars that inspire growth, teach practical skills and share valuable insights in a supportive environment, for schools, corporates and communities.',
+      title: 'Workshops, Trainings, Seminars & Events',
+      text: 'Interactive workshops, trainings, seminars and wellness events that inspire growth, teach practical skills and share valuable insights in a supportive environment, for schools, corporates and communities.',
     },
     {
       icon: 'people',
