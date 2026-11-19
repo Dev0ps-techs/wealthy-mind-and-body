@@ -134,7 +134,7 @@ export const offer = {
     {
       icon: 'lungs',
       title: 'Breathwork',
-      text: 'Guided breathing that improves focus, reduces stress, enhances lung capacity, balances emotions, regulates the nervous system and boosts overall well-being.',
+      text: 'Guided breathing, mindfulness meditation and chakra and energy work that improve focus, reduce stress, enhance lung capacity, balance emotions, regulate the nervous system and restore inner peace.',
     },
     {
       icon: 'easel',
