@@ -124,7 +124,7 @@ export const offer = {
     {
       icon: 'coachMind',
       title: 'Mindset & Wellness Coaching',
-      text: 'Break through limiting beliefs, build confidence and a growth mindset. We integrate mind, body and spirit with personalized guidance on lifestyle, nutrition, stress management and personal growth.',
+      text: 'Work with your conscious and subconscious mind to break through limiting beliefs, build confidence and a growth mindset. We integrate mind, body and spirit with personalized guidance on lifestyle, nutrition, stress management and personal growth.',
     },
     {
       icon: 'movePose',
