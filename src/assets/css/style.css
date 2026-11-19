@@ -923,3 +923,4 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 @media (max-width: 600px) { .offer .offer__grid { grid-template-columns: 1fr; } }
 .meet__frame img { object-position: 50% 20%; }
 .founder__img, .post__by img, .class-card__img img, .svc__img img { object-position: 50% 20%; }
+.program-card > img { aspect-ratio: 1206 / 949; }
