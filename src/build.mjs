@@ -443,7 +443,7 @@ function aboutBand(r) {
   <div class="container split-2">
     <div data-reveal>${tiktokCard(r)}</div>
     <div data-reveal style="--d:.1s">
-      <p class="eyebrow">Wealthy Mind &amp; Body</p>
+      <p class="eyebrow eyebrow--strong">Wealthy Mind &amp; Body</p>
       <h2 class="h-display">${C.aboutMBM.text}</h2>
       <p>${C.aboutMBM.belief}</p>
       <blockquote class="mission"><span>${C.aboutMBM.missionLabel}</span>${C.aboutMBM.mission}</blockquote>

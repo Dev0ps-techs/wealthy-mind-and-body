@@ -1110,3 +1110,5 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 .section--forest, .breathe-section, .footer__cta { background: linear-gradient(150deg, #3a5642 0%, #2c4634 55%, #223829 100%); }
 .community__card { background: linear-gradient(150deg, #3a5642 0%, #2c4634 55%, #223829 100%); }
 .btn--primary { --bg: #2c4634; --bd: #2c4634; --hover: #223829; }
+/* Bold, underlined section label */
+.eyebrow--strong { font-weight: 800; font-size: .86rem; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
