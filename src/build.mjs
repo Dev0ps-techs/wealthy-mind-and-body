@@ -93,14 +93,19 @@ const icon = (n, cls = 'icon') =>
 const btn = (href, label, cls = 'btn btn--primary', extra = '') =>
   `<a class="${cls}" href="${href}"${extra}><span>${label}</span>${icon('arrow')}</a>`;
 
+const shopLinks = [
+  { href: site.shopifyUrl || 'shop/#physical-products', ext: !!site.shopifyUrl, label: 'Physical Products', note: 'Shopify' },
+  { href: site.digistoreUrl || 'shop/#digital-products', ext: !!site.digistoreUrl, label: 'Digital Products', note: 'Digistore24' },
+];
+const serviceLinks = C.serviceMenu.map((m) => ({ href: `services/#${m.id}`, label: m.title }));
+const linkHref = (r, l) => (l.ext ? l.href : r + l.href);
+const linkAttrs = (l) => (l.ext ? ' target="_blank" rel="noopener"' : '');
+
 const NAV = [
   { href: '', label: 'Home', key: 'home' },
   { href: 'about/', label: 'About', key: 'about' },
-  { href: 'services/', label: 'Services', key: 'services' },
-  {
-    href: 'shop/', label: 'Shop', key: 'shop',
-    children: C.shop.categories.map((c) => ({ href: `shop/#${c.id}`, label: c.title })),
-  },
+  { href: 'services/', label: 'Services', key: 'services', children: serviceLinks },
+  { href: 'shop/', label: 'Shop', key: 'shop', children: shopLinks },
   { href: 'blog/', label: 'Blog', key: 'blog' },
   { href: 'faq/', label: 'FAQ', key: 'faq' },
   { href: 'contact/', label: 'Contact', key: 'contact' },
@@ -114,7 +119,7 @@ function layout({ r, title, desc = site.description, key = '', body, pathOut, og
     const active = n.key === key ? ' aria-current="page"' : '';
     if (!n.children) return `<li><a href="${r}${n.href}"${active}>${n.label}</a></li>`;
     return `<li class="has-sub"><a href="${r}${n.href}"${active}>${n.label}</a><button class="sub-toggle" aria-expanded="false" aria-label="Show ${n.label} categories">${icon('chevron')}</button>
-      <ul class="sub">${n.children.map((c) => `<li><a href="${r}${c.href}">${c.label}</a></li>`).join('')}</ul></li>`;
+      <ul class="sub">${n.children.map((c) => `<li><a href="${linkHref(r, c)}"${linkAttrs(c)}>${c.label}${c.note ? `<small>${c.note}</small>` : ''}</a></li>`).join('')}</ul></li>`;
   }).join('');
   const jsonld = {
     '@context': 'https://schema.org',
@@ -166,7 +171,7 @@ ${base ? `<base href="${base}">` : ''}
 <div class="progress" aria-hidden="true"></div>
 <div class="topbar">
   <div class="container topbar__in">
-    <a class="topbar__live" href="${r}#live"><span class="live-dot"></span> Live every morning · 5:00 AM Dubai time</a>
+    <span class="topbar__left"><span class="w30">For ${site.audience}</span><a class="topbar__live" href="${r}#live"><span class="live-dot"></span> Live every morning · 5:00 AM Dubai time</a></span>
     <span class="topbar__links">
       <a href="tel:${site.phone}">${icon('phone')} ${site.phoneDisplay}</a>
       <a href="mailto:${site.emails[1]}">${icon('mail')} ${site.emails[1]}</a>
@@ -176,6 +181,7 @@ ${base ? `<base href="${base}">` : ''}
 <header class="header">
   <div class="container header__in">
     <a class="logo" href="${r}" aria-label="${site.name} — home">${wordmark()}</a>
+    <span class="w30 w30--header">${site.audience}</span>
     <nav class="nav" id="site-nav" aria-label="Main">
       <ul class="nav__list">${navItems}</ul>
       <div class="nav__mobile-extra">
@@ -226,7 +232,7 @@ function footer(r) {
       <p class="eyebrow eyebrow--light">${site.positioning}</p>
       <h2>${site.tagline.replace('Empower Your Body.', '<br>Empower Your Body.<br>')}</h2>
       <div class="btn-row">
-        ${btn(`${r}booking/`, 'Book a session', 'btn btn--gold')}
+        ${btn(`${r}booking/`, 'Book a session', 'btn btn--rose')}
         <a class="btn btn--ghost-light" href="https://wa.me/${site.whatsapp}" target="_blank" rel="noopener">${icon('whatsapp')}<span>WhatsApp us</span></a>
       </div>
     </div>
@@ -235,6 +241,7 @@ function footer(r) {
     <div>
       <a class="logo logo--light" href="${r}">${wordmark()}</a>
       <p class="footer__tag">${site.tagline}</p>
+      <p class="w30 w30--footer">${site.audienceLine}</p>
       <p class="footer__about">${site.about}</p>
       <div class="social">${socialLinks()}</div>
     </div>
@@ -315,92 +322,171 @@ const breathingWidget = () => `
       <button role="radio" aria-checked="false" data-pattern="4,7,8,0">Calm 4·7·8</button>
       <button role="radio" aria-checked="false" data-pattern="5,0,5,0">Balance 5·5</button>
     </div>
-    <button class="btn btn--gold breathe__start"><span>Start breathing</span></button>
+    <button class="btn btn--rose breathe__start"><span>Start breathing</span></button>
     <p class="breathe__cycles" aria-live="polite">Find a comfortable seat. Soften your shoulders.</p>
   </div>
 </div>`;
 
 /* ---------------- pages ---------------- */
+function heroCarousel(r) {
+  const S = C.slides;
+  return `
+<section class="hero hero--carousel" data-hero aria-roledescription="carousel" aria-label="Highlights">
+  ${S.map((sl, i) => {
+    const tag = i === 0 ? 'h1' : 'h2';
+    const buttons = `<div class="btn-row">
+        ${sl.primary.href.startsWith('http')
+          ? `<a class="btn ${sl.pink ? 'btn--primary' : 'btn--rose'}" href="${sl.primary.href}" target="_blank" rel="noopener"><span>${sl.primary.label}</span>${icon('arrow')}</a>`
+          : btn(r + sl.primary.href, sl.primary.label, `btn ${sl.pink ? 'btn--primary' : 'btn--rose'}`)}
+        ${sl.secondary ? `<a class="btn ${sl.pink ? 'btn--outline' : 'btn--ghost-light'}" href="${r}${sl.secondary.href}"><span class="live-dot"></span><span>${sl.secondary.label}</span></a>` : btn(r + 'booking/', 'Book a session', 'btn btn--ghost-light')}
+      </div>`;
+    if (sl.pink) return `
+  <div class="slide slide--pink${i === 0 ? ' is-active' : ''}" role="group" aria-roledescription="slide" aria-label="${i + 1} of ${S.length}"${i ? ' aria-hidden="true"' : ''}>
+    <div class="slide__blob" aria-hidden="true"></div>
+    <div class="container slide__split">
+      <div class="slide__content">
+        <p class="w30 w30--lg">${sl.overline}</p>
+        <${tag} class="slide__title">${sl.title}</${tag}>
+        <p class="slide__text">${sl.text}</p>
+        ${buttons}
+        <p class="slide__note">${sl.note}</p>
+      </div>
+      <div class="slide__photo">
+        <div class="slide__arch">${img(r, sl.img, 'A woman meditating at sunrise', { eager: i === 0, sizes: '(min-width: 900px) 40vw, 80vw' })}</div>
+        <span class="slide__badge">${site.tagline}</span>
+      </div>
+    </div>
+  </div>`;
+    return `
+  <div class="slide${i === 0 ? ' is-active' : ''}" role="group" aria-roledescription="slide" aria-label="${i + 1} of ${S.length}"${i ? ' aria-hidden="true"' : ''}>
+    <div class="slide__bg">${img(r, sl.img, '', { eager: i === 0 })}</div>
+    <div class="slide__shade"></div>
+    <div class="container slide__content slide__content--light">
+      <p class="w30">For ${site.audience}</p>
+      <${tag} class="slide__title">${sl.title}</${tag}>
+      <p class="slide__text">${sl.text}</p>
+      ${buttons}
+    </div>
+  </div>`;
+  }).join('')}
+  <div class="container hero__nav">
+    <span class="hero__count"><b data-hero-current>01</b> / ${String(S.length).padStart(2, '0')}</span>
+    <div class="hero__dots">${S.map((sl, i) => `<button class="hero__dot${i === 0 ? ' is-active' : ''}" aria-label="Show slide ${i + 1}: ${esc(sl.title)}"><i></i></button>`).join('')}</div>
+    <div class="hero__arrows">
+      <button class="hero__arrow hero__prev" aria-label="Previous slide">${icon('arrow')}</button>
+      <button class="hero__arrow hero__next" aria-label="Next slide">${icon('arrow')}</button>
+    </div>
+  </div>
+</section>`;
+}
+
+function trio(r) {
+  const menu = (label, links) => `
+      <details class="trio__menu">
+        <summary><span>${label}</span>${icon('chevron')}</summary>
+        <ul>${links.map((l) => `<li><a href="${linkHref(r, l)}"${linkAttrs(l)}><span>${l.label}</span>${l.note ? `<small>${l.note}</small>` : icon('arrow')}</a></li>`).join('')}</ul>
+      </details>`;
+  const cards = [
+    { t: 'Blog', img: 'blog-cover', text: 'Articles, guided videos and daily mindset quotes to support your practice between sessions.', foot: `<a class="link-arrow" href="${r}blog/">Read More ${icon('arrow')}</a>`, href: 'blog/' },
+    { t: 'Services', img: 'services-event', text: C.services.intro, foot: menu('Choose a service', serviceLinks), href: 'services/' },
+    { t: 'Shop', img: 'shop-collage', text: 'Wellness essentials, active wear, ebooks and digital programs.', foot: menu('Choose a store', shopLinks), href: 'shop/' },
+  ];
+  return `
+<section class="section intro" id="explore">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Explore</p>
+      <h2 class="h-display">Everything you need, in one place</h2>
+      <p>${C.hero.tagline}</p>
+    </div>
+  </div>
+  <div class="container trio">
+    ${cards.map((c, i) => `
+    <article class="trio__card" data-reveal style="--d:${i * 0.1}s">
+      <a class="trio__img" href="${r}${c.href}" tabindex="-1" aria-hidden="true">${img(r, c.img, '', { sizes: '(min-width: 900px) 33vw, 100vw' })}</a>
+      <div class="trio__body"><h3><a href="${r}${c.href}">${c.t}</a></h3><p>${c.text}</p>${c.foot}</div>
+    </article>`).join('')}
+  </div>
+</section>`;
+}
+
+function aboutBand(r) {
+  return `
+<section class="section about-band">
+  <div class="container split-2">
+    <div data-reveal>${videoCard(r, site.introVideo, 'cliff-yoga', 'Watch: 10 minutes of mind & body movement')}</div>
+    <div data-reveal style="--d:.1s">
+      <p class="eyebrow">About MBM</p>
+      <h2 class="h-display">${C.aboutMBM.text}</h2>
+      <p>${C.aboutMBM.belief}</p>
+      <blockquote class="mission"><span>${C.aboutMBM.missionLabel}</span>${C.aboutMBM.mission}</blockquote>
+      ${btn(r + 'about/', 'Read More', 'btn btn--outline')}
+    </div>
+  </div>
+</section>`;
+}
+
+function offerSection(r) {
+  return `
+<section class="section offer">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">${C.offer.eyebrow}</p>
+      <h2 class="h-display">${C.offer.title}</h2>
+      <p>${C.offer.text}</p>
+    </div>
+    <div class="offer__grid">
+      ${C.offer.items.map((o, i) => `
+      <article class="offer__card" data-reveal style="--d:${i * 0.08}s">
+        <span class="offer__num">0${i + 1}</span>
+        <span class="icon-badge">${icon(o.icon)}</span>
+        <h3>${o.title}</h3>
+        <p>${o.text}</p>
+      </article>`).join('')}
+    </div>
+  </div>
+</section>`;
+}
+
+function benefitsSection(r) {
+  return `
+<section class="section benefits">
+  <div class="benefits__bg" data-parallax="0.2">${img(r, 'coast-yoga', '')}</div>
+  <div class="container">
+    <div class="section-head section-head--light" data-reveal>
+      <p class="eyebrow eyebrow--light">Why Wealthy Mind and Body</p>
+      <h2 class="h-display">Benefits of MBM</h2>
+    </div>
+    <ul class="benefits__grid">
+      ${C.benefits.items.map((b, i) => `<li data-reveal style="--d:${i * 0.06}s"><span class="icon-badge icon-badge--light">${icon(b.icon)}</span>${b.title}</li>`).join('')}
+    </ul>
+  </div>
+</section>`;
+}
+
 function home(r) {
   const H = C.home;
   const L = H.live;
   return `
-<section class="hero">
-  <div class="hero__media">
-    <div class="hero__img" data-parallax="0.18">${img(r, H.hero.img, 'A woman meditating at sunrise', { eager: true })}</div>
-    <div class="hero__shade"></div>
-  </div>
-  <div class="container hero__in">
-    <p class="eyebrow eyebrow--light hero__overline" data-reveal>${H.hero.overline}</p>
-    <h1 class="hero__title split" data-reveal>${H.hero.title}</h1>
-    <p class="hero__text" data-reveal style="--d:.35s">${H.hero.text}</p>
-    <div class="btn-row" data-reveal style="--d:.5s">
-      ${btn(r + H.hero.primary.href, H.hero.primary.label, 'btn btn--gold')}
-      <a class="btn btn--ghost-light" href="${r}${H.hero.secondary.href}"><span class="live-dot"></span><span>${H.hero.secondary.label}</span></a>
-    </div>
-    <p class="hero__tag" data-reveal style="--d:.65s">${site.tagline}</p>
-  </div>
-  <a class="hero__scroll" href="#pillars" aria-label="Scroll to content"><span></span></a>
-</section>
-
-<section class="section pillars-home" id="pillars">
-  <div class="container">
-    <div class="section-head" data-reveal>
-      <p class="eyebrow">The Three Pillars</p>
-      <h2 class="h-display">Mind. Body. <em>Soul.</em></h2>
-      <p>${site.positioning}</p>
-    </div>
-    <div class="pillar-cards">
-      ${H.pillars.map((p, i) => `
-      <article class="pillar-card" data-reveal data-tilt style="--d:${i * 0.12}s">
-        <div class="pillar-card__img">${img(r, p.img, '', { sizes: '(min-width: 900px) 33vw, 100vw' })}</div>
-        <div class="pillar-card__body">
-          <span class="pillar-card__emoji" aria-hidden="true">${p.emoji}</span>
-          <h3>${p.key}</h3>
-          <p>${p.text}</p>
-        </div>
-      </article>`).join('')}
-    </div>
-  </div>
-</section>
-
+${heroCarousel(r)}
+${trio(r)}
 <section class="section meet">
   <div class="container split-2">
     <div class="meet__media" data-reveal>
       <div class="meet__frame">${img(r, H.meet.img, 'Letchance Ngassa', { sizes: '(min-width: 900px) 40vw, 90vw' })}</div>
-      <div class="meet__sig" data-parallax="-0.06">Letchance Ngassa<span>Mindset Coach · Yoga Teacher</span></div>
+      <div class="meet__sig" data-parallax="-0.06">${site.audience}<span>Coaching for women</span></div>
     </div>
     <div data-reveal style="--d:.1s">
       <p class="eyebrow">${H.meet.eyebrow}</p>
-      <h2 class="h-display">${H.meet.title}</h2>
+      <h2 class="h-display meet__name">${H.meet.title}</h2>
+      <p class="meet__role">${H.meet.subtitle}</p>
       ${H.meet.story.map((p) => `<p>${p}</p>`).join('')}
       ${btn(r + H.meet.cta.href, H.meet.cta.label, 'btn btn--primary')}
     </div>
   </div>
 </section>
-
-<section class="section section--sand programs">
-  <div class="container">
-    <div class="section-head section-head--row" data-reveal>
-      <div><p class="eyebrow">Featured Programs</p><h2 class="h-display">Transformation, designed for you</h2></div>
-      ${btn(r + 'services/', 'All services', 'btn btn--outline')}
-    </div>
-    <div class="program-cards">
-      ${H.programs.map((p, i) => `
-      <a class="program-card" href="${r}booking/?service=${encodeURIComponent(p.title)}" data-reveal style="--d:${i * 0.12}s">
-        ${img(r, p.img, '', { sizes: '(min-width: 900px) 33vw, 100vw' })}
-        <div class="program-card__body">
-          <span class="icon-badge icon-badge--light">${icon(p.icon)}</span>
-          <span class="program-card__num">0${i + 1}</span>
-          <h3>${p.title}</h3>
-          <p>${p.text}</p>
-          <span class="link-arrow">Begin this program ${icon('arrow')}</span>
-        </div>
-      </a>`).join('')}
-    </div>
-  </div>
-</section>
-
+${aboutBand(r)}
+${offerSection(r)}
 <section class="section resources" id="resources">
   <div class="container split-2 split-2--top">
     <div data-reveal>
@@ -423,7 +509,28 @@ function home(r) {
     </ul>
   </div>
 </section>
-
+<section class="section section--sand programs">
+  <div class="container">
+    <div class="section-head section-head--row" data-reveal>
+      <div><p class="eyebrow">Featured Programs</p><h2 class="h-display">Programs for <em>${site.audience}</em></h2></div>
+      ${btn(r + 'services/', 'All services', 'btn btn--outline')}
+    </div>
+    <div class="program-cards">
+      ${H.programs.map((p, i) => `
+      <a class="program-card" href="${r}booking/?service=${encodeURIComponent(p.service)}" data-reveal style="--d:${i * 0.12}s">
+        ${img(r, p.img, '', { sizes: '(min-width: 900px) 33vw, 100vw' })}
+        <div class="program-card__body">
+          <span class="icon-badge icon-badge--light">${icon(p.icon)}</span>
+          <span class="program-card__num">0${i + 1}</span>
+          <h3>${p.title}</h3>
+          <p>${p.text}</p>
+          <ul class="points">${p.points.map((x) => `<li>${x}</li>`).join('')}</ul>
+          <span class="link-arrow">Begin this program ${icon('arrow')}</span>
+        </div>
+      </a>`).join('')}
+    </div>
+  </div>
+</section>
 <section class="section section--forest live" id="live" data-live data-hour="${L.startHour}" data-duration="${L.durationMin}">
   <div class="container">
     <div class="live__grid">
@@ -440,7 +547,7 @@ function home(r) {
           <p class="countdown__local" data-cd-local></p>
         </div>
         <div class="btn-row">
-          <a class="btn btn--gold" href="${site.youtube.daily}" target="_blank" rel="noopener">${icon('youtube')}<span>Subscribe on YouTube</span></a>
+          <a class="btn btn--rose" href="${site.youtube.daily}" target="_blank" rel="noopener">${icon('youtube')}<span>Subscribe on YouTube</span></a>
           <button class="btn btn--ghost-light" data-ics>${icon('calendar')}<span>Add to calendar</span></button>
         </div>
       </div>
@@ -455,7 +562,7 @@ function home(r) {
     </div>
   </div>
 </section>
-
+${benefitsSection(r)}
 <section class="section testimonials">
   <div class="container container--narrow">
     <p class="eyebrow" data-reveal>Kind words</p>
@@ -475,24 +582,43 @@ function home(r) {
     </div>
   </div>
 </section>
-
+<section class="section pillars-home" id="pillars">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">The Three Pillars</p>
+      <h2 class="h-display">Mind. Body. <em>Soul.</em></h2>
+      <p>${site.positioning}</p>
+    </div>
+    <div class="pillar-cards">
+      ${H.pillars.map((p, i) => `
+      <article class="pillar-card" data-reveal data-tilt style="--d:${i * 0.12}s">
+        <div class="pillar-card__img">${img(r, p.img, '', { sizes: '(min-width: 900px) 33vw, 100vw' })}</div>
+        <div class="pillar-card__body">
+          <span class="pillar-card__emoji" aria-hidden="true">${p.emoji}</span>
+          <h3>${p.key}</h3>
+          <p>${p.text}</p>
+        </div>
+      </article>`).join('')}
+    </div>
+  </div>
+</section>
 <section class="section community">
   <div class="container">
     <div class="community__card" data-reveal>
       <div class="community__img">${img(r, H.community.img, 'A group yoga class', { sizes: '(min-width: 900px) 45vw, 100vw' })}</div>
       <div class="community__body">
-        <p class="eyebrow eyebrow--light">Community Membership</p>
+        <p class="eyebrow eyebrow--light">Community Membership · ${site.audience}</p>
         <h2 class="h-display">${H.community.title}</h2>
         <ul class="ticks">${H.community.items.map((it) => `<li>${icon('check')} ${it}</li>`).join('')}</ul>
-        <a class="btn btn--gold" href="https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hi Letchance! I’d love to join the Wealthy Mind and Body community.')}" target="_blank" rel="noopener"><span>${H.community.cta}</span>${icon('arrow')}</a>
+        <a class="btn btn--rose" href="https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hi Letchance! I’d love to join the Wealthy Mind and Body community.')}" target="_blank" rel="noopener"><span>${H.community.cta}</span>${icon('arrow')}</a>
       </div>
     </div>
   </div>
 </section>
-
 <section class="section email-cap">
   <div class="container container--narrow email-cap__in" data-reveal>
     <span class="email-cap__mark" aria-hidden="true">${icon('lotus')}</span>
+    <span class="w30">For ${site.audience}</span>
     <h2 class="h-display">${H.email.title}</h2>
     <p>${H.email.text}</p>
     <form class="inline-form inline-form--center" data-subscribe="Newsletter signup">
@@ -507,24 +633,7 @@ function home(r) {
 // Sections from the original homepage, now on the Services page.
 function servicesExtras(r) {
   return `
-<section class="section offer">
-  <div class="container">
-    <div class="section-head" data-reveal>
-      <p class="eyebrow">${C.offer.eyebrow}</p>
-      <h2 class="h-display">${C.offer.title}</h2>
-      <p>${C.offer.text}</p>
-    </div>
-    <div class="offer__grid">
-      ${C.offer.items.map((o, i) => `
-      <article class="offer__card" data-reveal style="--d:${i * 0.08}s">
-        <span class="offer__num">0${i + 1}</span>
-        <span class="icon-badge">${icon(o.icon)}</span>
-        <h3>${o.title}</h3>
-        <p>${o.text}</p>
-      </article>`).join('')}
-    </div>
-  </div>
-</section>
+${offerSection(r)}
 
 <section class="section breathe-section" id="breathe">
   <div class="container split-2">
@@ -538,18 +647,7 @@ function servicesExtras(r) {
   </div>
 </section>
 
-<section class="section benefits">
-  <div class="benefits__bg" data-parallax="0.2">${img(r, 'coast-yoga', '')}</div>
-  <div class="container">
-    <div class="section-head section-head--light" data-reveal>
-      <p class="eyebrow eyebrow--light">Why Wealthy Mind and Body</p>
-      <h2 class="h-display">${C.benefits.title}</h2>
-    </div>
-    <ul class="benefits__grid">
-      ${C.benefits.items.map((b, i) => `<li data-reveal style="--d:${i * 0.06}s"><span class="icon-badge icon-badge--light">${icon(b.icon)}</span>${b.title}</li>`).join('')}
-    </ul>
-  </div>
-</section>
+${benefitsSection(r)}
 
 <section class="section kids" id="kids">
   <div class="container split-2 split-2--rev">
@@ -593,7 +691,7 @@ function servicesExtras(r) {
   <div class="container practice__in" data-reveal>
     <h2 class="h-display">${C.practice.title}</h2>
     <p>${C.practice.text}</p>
-    ${btn(r + 'booking/', C.practice.cta, 'btn btn--gold')}
+    ${btn(r + 'booking/', C.practice.cta, 'btn btn--rose')}
   </div>
 </section>`;
 }
@@ -647,7 +745,7 @@ ${pageHero(r, { eyebrow: A.missionLabel, title: A.mission, text: A.belief, imgNa
       <p class="eyebrow eyebrow--light">${site.tagline}</p>
       <h2 class="h-display">${A.closing}</h2>
       <p>${site.about}</p>
-      <div class="btn-row">${btn(r + 'booking/', 'Book a session', 'btn btn--gold')}${btn(r + 'services/', 'Explore services', 'btn btn--ghost-light')}</div>
+      <div class="btn-row">${btn(r + 'booking/', 'Book a session', 'btn btn--rose')}${btn(r + 'services/', 'Explore services', 'btn btn--ghost-light')}</div>
     </div>
     <div class="rounded-img" data-reveal style="--d:.1s">${img(r, A.closingImg, 'A healthy workshop buffet', { sizes: '(min-width: 900px) 45vw, 100vw' })}</div>
   </div>
@@ -660,6 +758,19 @@ function servicesPage(r) {
 ${pageHero(r, { eyebrow: 'Services', title: 'Holistic wellness for every body', text: S.intro, imgName: 'family-yoga-park', crumbs: [{ label: 'Services' }] })}
 <section class="section">
   <div class="container">
+    <div class="section-head" data-reveal><p class="eyebrow">Our services · ${site.audience}</p><h2 class="h-display">How we work together</h2></div>
+    <div class="svc-menu">
+      ${C.serviceMenu.map((m, i) => `
+      <article class="svc" id="${m.id}" data-reveal style="--d:${(i % 3) * 0.08}s">
+        <div class="svc__img">${img(r, m.img, m.title, { sizes: '(min-width: 900px) 33vw, 100vw' })}</div>
+        <div class="svc__body">
+          <span class="icon-badge">${icon(m.icon)}</span>
+          <h3>${m.title}</h3>
+          <p>${m.text}</p>
+          <a class="link-arrow" href="${r}booking/?service=${encodeURIComponent(m.title)}">Book ${m.title} ${icon('arrow')}</a>
+        </div>
+      </article>`).join('')}
+    </div>
     <div class="service-pills" data-reveal>${S.list.map((l) => `<span class="chip chip--lg">${icon('lotus')} ${l}</span>`).join('')}</div>
     ${S.items.map((it, i) => `
     <article class="service-row${i % 2 ? ' service-row--rev' : ''}">
@@ -721,7 +832,7 @@ ${servicesExtras(r)}
 
 function bookingPage(r) {
   const B = C.booking;
-  const options = [...C.home.programs.map((p) => p.title), 'Live Morning Classes', 'Community Membership', ...C.services.list, ...C.classes.items.map((c) => c.title), 'Private and Group Sessions', 'Mind and Body Fit', 'Workshop / Retreat', 'Other']
+  const options = [...C.serviceMenu.map((m) => m.title), ...C.home.programs.map((p) => p.title), 'Live Morning Classes', 'Community Membership', ...C.services.list, ...C.classes.items.map((c) => c.title), 'Private and Group Sessions', 'Mind and Body Fit', 'Workshop / Retreat', 'Other']
     .filter((v, i, a) => a.indexOf(v) === i);
   return `
 ${pageHero(r, { eyebrow: 'Booking', title: B.title, text: B.paragraphs[0], imgName: 'meditation-sunset', crumbs: [{ label: 'Booking' }] })}
@@ -785,6 +896,18 @@ ${pageHero(r, { eyebrow: 'Shop · Coming soon', title: S.title, text: S.text, im
         <label class="field"><input type="email" name="email" required placeholder=" " autocomplete="email"><span>Your email</span></label>
         <button class="btn btn--primary" type="submit"><span>Notify me</span>${icon('arrow')}</button>
       </form>
+    </div>
+    <div class="stores">
+      ${shopLinks.map((l, i) => `
+      <a class="store" id="${i === 0 ? 'physical-products' : 'digital-products'}" href="${linkHref(r, l)}"${l.ext ? linkAttrs(l) : ''} data-reveal style="--d:${i * 0.1}s">
+        ${img(r, i === 0 ? 'fresh-juices' : 'yoga-childs-pose', '', { sizes: '(min-width: 900px) 50vw, 100vw' })}
+        <span class="store__body">
+          <span class="tag">${l.note}</span>
+          <strong>${l.label}</strong>
+          <span>${i === 0 ? 'Wellness products and Be Fit &amp; Flex active wear' : 'Ebooks, guided programs and online classes'}</span>
+          <span class="link-arrow">${l.ext ? `Shop on ${l.note}` : `${l.note} store opening soon`} ${icon('arrow')}</span>
+        </span>
+      </a>`).join('')}
     </div>
     <div class="cats">
       ${S.categories.map((c, i) => `

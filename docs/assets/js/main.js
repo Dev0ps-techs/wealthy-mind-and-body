@@ -166,6 +166,65 @@
     d.addEventListener('click', (e) => { if (e.target === d || e.target.closest('.video-modal__close')) closeDialog(d); });
   });
 
+  /* ---------- homepage hero carousel ---------- */
+  const hero = $('[data-hero]');
+  if (hero) {
+    const slides = $$('.slide', hero);
+    const dots = $$('.hero__dot', hero);
+    const cur = $('[data-hero-current]', hero);
+    const TIME = 7000;
+    hero.style.setProperty('--slide-time', TIME + 'ms');
+    let i = 0, timer = null, paused = false;
+    const go = (n) => {
+      i = (n + slides.length) % slides.length;
+      slides.forEach((s, k) => {
+        s.classList.toggle('is-active', k === i);
+        s.setAttribute('aria-hidden', k !== i);
+        $$('a, button', s).forEach((el) => (el.tabIndex = k === i ? 0 : -1));
+      });
+      dots.forEach((d, k) => {
+        d.classList.remove('is-active');
+        d.classList.toggle('is-done', k < i);
+        if (k === i) { void d.offsetWidth; d.classList.add('is-active'); } // restart progress bar
+      });
+      hero.classList.toggle('hero--on-pink', slides[i].classList.contains('slide--pink'));
+      if (cur) cur.textContent = String(i + 1).padStart(2, '0');
+      schedule();
+    };
+    const schedule = () => {
+      clearTimeout(timer);
+      if (!reduced && !paused) timer = setTimeout(() => go(i + 1), TIME);
+    };
+    const pause = (on) => { paused = on; hero.classList.toggle('hero--paused', on); if (on) clearTimeout(timer); else schedule(); };
+    $('.hero__next', hero).addEventListener('click', () => go(i + 1));
+    $('.hero__prev', hero).addEventListener('click', () => go(i - 1));
+    dots.forEach((d, k) => d.addEventListener('click', () => go(k)));
+    hero.addEventListener('mouseenter', () => pause(true));
+    hero.addEventListener('mouseleave', () => pause(false));
+    hero.addEventListener('focusin', () => pause(true));
+    hero.addEventListener('focusout', () => pause(false));
+    hero.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') go(i + 1);
+      if (e.key === 'ArrowLeft') go(i - 1);
+    });
+    let sx = null;
+    hero.addEventListener('touchstart', (e) => (sx = e.touches[0].clientX), { passive: true });
+    hero.addEventListener('touchend', (e) => {
+      if (sx === null) return;
+      const dx = e.changedTouches[0].clientX - sx;
+      if (Math.abs(dx) > 45) go(i + (dx < 0 ? 1 : -1));
+      sx = null;
+    });
+    document.addEventListener('visibilitychange', () => (document.hidden ? clearTimeout(timer) : schedule()));
+    // start once the loading screen has lifted
+    const begin = () => go(0);
+    if (document.documentElement.classList.contains('is-loading')) {
+      new MutationObserver((m, o) => {
+        if (!document.documentElement.classList.contains('is-loading')) { o.disconnect(); begin(); }
+      }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    } else begin();
+  }
+
   /* ---------- testimonials carousel ---------- */
   $$('[data-carousel]').forEach((car) => {
     const slides = $$('.t-slide', car);

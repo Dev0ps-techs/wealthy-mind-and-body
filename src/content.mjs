@@ -12,6 +12,11 @@ export const site = {
   // Optional: paste a form endpoint (e.g. Formspree / Mailchimp) to collect emails directly.
   // Leave empty and forms fall back to opening an email or WhatsApp message.
   formEndpoint: '',
+  audience: 'Women 30+',
+  audienceLine: 'Helping Women Rise Into Their Most Confident, Healthy and Aligned Selves.',
+  // Paste the real store links here. Until then the Shop menu points to the shop page.
+  shopifyUrl: '',
+  digistoreUrl: '',
   owner: 'Letchance Ngassa',
   location: 'Dubai, UAE',
   locationNote:
@@ -21,7 +26,7 @@ export const site = {
   whatsapp: '971552807783',
   emails: ['leechance_n@mbm.tips', 'leechancengassa@gmail.com', 'info@mbm.tips'],
   description:
-    'Where modern wellness meets mind, body & soul transformation. Mindset mastery, mindful movement and soulful living with Letchance Ngassa — live daily, online worldwide and in person in Dubai. Mind and body wellness through movement, breathwork and coaching in Dubai, UAE. Mindset coaching, YogaFit, Hatha, Prenatal, Yin and Children’s Yoga — in person across the UAE and online worldwide.',
+    'For women 30+: where modern wellness meets mind, body & soul transformation. Mindset mastery, mindful movement and soulful living with Letchance Ngassa — live daily, online worldwide and in person in Dubai. Mind and body wellness through movement, breathwork and coaching in Dubai, UAE. Mindset coaching, YogaFit, Hatha, Prenatal, Yin and Children’s Yoga — in person across the UAE and online worldwide.',
   about:
     'At our wellness center, we focus on holistic growth by combining mindset coaching with yoga sessions. Our approach is designed to enhance both flexibility and strength, promoting overall well-being and personal development.',
   social: [
@@ -440,8 +445,9 @@ export const home = {
     { key: 'Soul', emoji: '✨', img: 'meditation-sunset', text: 'Reconnect with purpose, gratitude, inner peace and spiritual wellbeing.' },
   ],
   meet: {
-    eyebrow: 'Meet Letchance',
-    title: 'Your Guide to Holistic Wellness',
+    eyebrow: 'Meet your coach',
+    title: 'Letchance Ngassa',
+    subtitle: 'Mindset & Wellness Coach, Mind & Body Movement Specialist',
     // TODO: replace with Letchance's own transformation story.
     story: [
       'I believe in the transformative power of body movement and self-discovery to unlock your potential and elevate your well-being. True wellness is not just about physical health, but a harmonious balance of the mind, body, and spirit.',
@@ -451,9 +457,24 @@ export const home = {
     cta: { label: 'Read My Story', href: 'about/' },
   },
   programs: [
-    { title: 'Mindset Mastery', text: 'Transform limiting beliefs and build confidence.', img: 'mindset-coaching-class', icon: 'mind' },
-    { title: 'Mind & Body Movement', text: 'Daily movement sessions promoting strength, mobility and wellbeing.', img: 'stretch-mat', icon: 'stretch' },
-    { title: 'Soul Alignment', text: 'Meditation, gratitude and spiritual growth practices.', img: 'beach-meditation', icon: 'lotus' },
+    {
+      title: 'Mindset & Wellness Coach',
+      text: 'Transform limiting beliefs, build confidence and calm your nervous system.',
+      points: ['Conscious mind', 'Subconscious mind', 'Nervous system'],
+      img: 'mindset-coaching-class', icon: 'mind', service: 'Mindset Coaching',
+    },
+    {
+      title: 'Mind & Body Movement',
+      text: 'Daily movement sessions promoting strength, mobility and wellbeing.',
+      points: ['Hatha Yoga', 'Yin Yoga', 'Prenatal Yoga', 'Vinyasa', 'Calisthenics', 'Wall Pilates', 'Children Yoga'],
+      img: 'stretch-mat', icon: 'stretch', service: 'Mind & Body Movement Sequences',
+    },
+    {
+      title: 'Breathwork',
+      text: 'Guided breathing to calm the mind, restore energy and find inner peace.',
+      points: ['Mindfulness practices', 'Meditation', 'Chakras', 'Energy', 'Nervous system regulation', 'Inner peace'],
+      img: 'beach-meditation', icon: 'breath', service: 'Breathwork Sessions',
+    },
   ],
   resources: {
     title: 'Free Resources',
@@ -495,3 +516,60 @@ export const home = {
     cta: 'Join Now',
   },
 };
+
+/* ---------- Homepage carousel (first section) ---------- */
+// Same slides as the original site; the old logo slide is replaced by the pink brand slide.
+export const slides = [
+  {
+    pink: true,
+    overline: 'For Women 30+',
+    title: 'Become the Woman You Were Created to Be',
+    text: 'Supporting women in creating lasting transformation through mindset mastery, mindful movement, and soulful living.',
+    note: 'Helping Women Rise Into Their Most Confident, Healthy and Aligned Selves.',
+    img: 'meditation-sunset',
+    primary: { label: 'Start Your Journey', href: 'booking/' },
+    secondary: { label: 'Join Live Classes', href: '#live' },
+  },
+  {
+    title: 'Discover Balance Through Mindset & Movement',
+    text: 'Our mindset coaching sessions help you develop a more resilient and positive outlook, enabling you to navigate life’s challenges with greater ease.',
+    img: 'sunset-tree-pose',
+    primary: { label: 'Read More', href: 'about/' },
+  },
+  {
+    title: 'Empower your Mind and Body',
+    text: 'Unleash your spirit, conquer challenges and embark on an exhilarating journey to a vibrant joyful life',
+    img: 'skydive-palm',
+    primary: { label: 'Read More', href: 'https://youtu.be/MDYtyErvpEY?si=YoP5vo47C2evWmIb' },
+  },
+  {
+    title: 'Stay Fit from a Young Age',
+    text: 'Introduce your child to the benefits of yoga and set them on the path to a healthy, active life. Our children’s yoga classes are designed to improve flexibility, strength, and coordination while promoting mindfulness and emotional balance.',
+    img: 'kids-beach-yoga',
+    primary: { label: 'Read More', href: 'https://www.youtube.com/@leechancekidsyoga4170' },
+  },
+];
+
+/* ---------- Service menu (Services dropdown + Services page) ---------- */
+export const serviceMenu = [
+  {
+    id: 'mindset-coaching', title: 'Mindset Coaching', img: 'leechance-portrait', icon: 'mind',
+    text: 'Mindset coaching helps you break through limiting beliefs and develop a growth-focused mindset. Unlock your potential, build resilience, and achieve your goals with personalized guidance.',
+  },
+  {
+    id: 'movement-sequences', title: 'Mind & Body Movement Sequences', img: 'yogafit-collage', icon: 'stretch',
+    text: 'Discover the perfect blend of strength, flexibility, and tranquility: Hatha Yoga, Yin Yoga, Prenatal Yoga, Vinyasa, Calisthenics, Wall Pilates and playful Children’s Yoga.',
+  },
+  {
+    id: 'breathwork', title: 'Breathwork Sessions', img: 'meditation-sunset', icon: 'breath',
+    text: 'Guided breathing techniques improve focus, reduce stress, enhance lung capacity, balance emotions, detoxify the body, and boost overall well-being.',
+  },
+  {
+    id: 'group-classes', title: 'Group Classes', img: 'group-lessons', icon: 'link',
+    text: 'Enjoy the motivation of group yoga and breathwork sessions, at your school, corporate office, hospital, or even local parks, in person across the UAE and online around the world.',
+  },
+  {
+    id: 'private-classes', title: 'Private Classes', img: 'prenatal-yoga', icon: 'star',
+    text: 'Personalized one-on-one sessions tailored to your goals, brought to the comfort of your home or wherever you are.',
+  },
+];
