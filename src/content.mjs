@@ -160,7 +160,7 @@ export const classes = {
       title: 'Mindset Coaching',
       days: 'Tuesdays – Saturdays',
       hours: '8:30 – 17:00',
-      img: 'leechance-portrait',
+      img: 'letchance-ngassa',
       text: 'At Wealthy Mind and Body, we empower individuals to shift their perspectives, overcome obstacles, and cultivate a positive mindset. Our tailored lessons combine proven strategies and personalized support to help you achieve your goals, boost resilience, and enhance overall well-being.',
     },
     {
@@ -554,7 +554,7 @@ export const slides = [
 /* ---------- Service menu (Services dropdown + Services page) ---------- */
 export const serviceMenu = [
   {
-    id: 'mindset-coaching', title: 'Mindset Coaching', img: 'leechance-portrait', icon: 'mind',
+    id: 'mindset-coaching', title: 'Mindset Coaching', img: 'letchance-ngassa', icon: 'mind',
     text: 'Mindset coaching helps you break through limiting beliefs and develop a growth-focused mindset. Unlock your potential, build resilience, and achieve your goals with personalized guidance.',
   },
   {

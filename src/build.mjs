@@ -691,7 +691,7 @@ ${pageHero(r, { eyebrow: A.missionLabel, title: A.mission, text: A.belief, imgNa
       <h2 class="h-display">${A.text}</h2>
       <p>${A.wellness}</p>
       <div class="founder">
-        ${img(r, 'leechance-portrait', site.owner, { cls: 'founder__img', sizes: '72px' })}
+        ${img(r, 'letchance-ngassa', site.owner, { cls: 'founder__img', sizes: '72px' })}
         <div><strong>${site.owner}</strong><span>Founder · Mindset Coach & Yoga Teacher</span></div>
       </div>
     </div>
@@ -967,7 +967,7 @@ function postPage(r, p) {
       <nav class="crumbs crumbs--dark" aria-label="Breadcrumb"><a href="${r}">Home</a><span>/</span><a href="${r}blog/">Blog</a><span>/</span><span aria-current="page">${p.title}</span></nav>
       <p class="meta" data-reveal><span class="tag tag--solid">${p.type}</span> <time datetime="${p.date}">${fmtDate(p.date)}</time>${p.type === 'Article' ? ` · ${readMins(p)} min read` : ''}</p>
       <h1 class="h-display split" data-reveal>${p.title}</h1>
-      <p class="post__by" data-reveal>${img(r, 'leechance-portrait', '', { sizes: '40px' })} By ${site.owner}</p>
+      <p class="post__by" data-reveal>${img(r, 'letchance-ngassa', '', { sizes: '40px' })} By ${site.owner}</p>
     </div>
   </header>
   <div class="container container--narrow post__body">
