@@ -1053,3 +1053,6 @@ html.is-loading, html.is-loading body { overflow: hidden; }
   .slide--framed .slide__frame { margin-inline: auto 0; }
 }
 .program-card:nth-child(1) > img { object-position: 50% 38%; }
+/* Program cards: tags follow the text; only the link sits at the bottom */
+.program-card p { flex: none; }
+.program-card .link-arrow { margin-top: auto; }
