@@ -1096,3 +1096,4 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 .offer__card p { color: rgba(255, 255, 255, .8); }
 .offer__card .offer__num { color: var(--rose-glow); opacity: .7; }
 .offer__card .icon-badge::after { border-color: rgba(242, 184, 200, .45); }
+.offer .offer__card h3, .offer .offer__card p { color: #fff; }
