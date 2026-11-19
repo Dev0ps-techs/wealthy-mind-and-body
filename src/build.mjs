@@ -363,7 +363,7 @@ function heroCarousel(r) {
     </div>
   </div>`;
     if (sl.framed) return `
-  <div class="slide slide--framed${i === 0 ? ' is-active' : ''}" role="group" aria-roledescription="slide" aria-label="${i + 1} of ${S.length}"${i ? ' aria-hidden="true"' : ''}>
+  <div class="slide slide--framed${dims(sl.img + '.webp').w > dims(sl.img + '.webp').h * 1.2 ? ' slide--framed-wide' : ''}${i === 0 ? ' is-active' : ''}" role="group" aria-roledescription="slide" aria-label="${i + 1} of ${S.length}"${i ? ' aria-hidden="true"' : ''}>
     <div class="container slide__split">
       <div class="slide__content slide__content--light">
         <p class="w30">For ${site.audience}</p>
@@ -372,7 +372,7 @@ function heroCarousel(r) {
         ${buttons}
       </div>
       <div class="slide__photo">
-        <div class="slide__frame">${img(r, sl.img, sl.imgAlt || '', { eager: i === 0, sizes: '(min-width: 900px) 40vw, 80vw' })}</div>
+        <div class="slide__frame" style="aspect-ratio: ${dims(sl.img + '.webp').w} / ${dims(sl.img + '.webp').h}">${img(r, sl.img, sl.imgAlt || '', { eager: i === 0, sizes: '(min-width: 900px) 55vw, 80vw' })}</div>
       </div>
     </div>
   </div>`;
