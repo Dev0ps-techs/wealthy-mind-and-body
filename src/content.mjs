@@ -470,7 +470,7 @@ export const home = {
       title: 'Mindset & Wellness Coach',
       text: 'Transform limiting beliefs, build confidence and calm your nervous system.',
       points: ['Conscious mind', 'Subconscious mind', 'Nervous system'],
-      img: 'mindset-event', icon: 'mind', service: 'Mindset Coaching',
+      img: 'najahi-event-lisa-nichols', icon: 'mind', service: 'Mindset Coaching',
     },
     {
       title: 'Mind & Body Movement',
