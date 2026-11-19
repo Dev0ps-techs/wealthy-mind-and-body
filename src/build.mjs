@@ -378,7 +378,7 @@ function heroCarousel(r) {
   </div>`;
     return `
   <div class="slide${sl.align === 'right' ? ' slide--right' : ''}${sl.valign === 'bottom' ? ' slide--bottom' : ''}${i === 0 ? ' is-active' : ''}" role="group" aria-roledescription="slide" aria-label="${i + 1} of ${S.length}"${i ? ' aria-hidden="true"' : ''}>
-    <div class="slide__bg">${img(r, sl.img, sl.imgAlt || '', { eager: i === 0 })}</div>
+    <div class="slide__bg">${img(r, sl.img, sl.imgAlt || '', { eager: i === 0, attrs: sl.pos ? `style="object-position: ${sl.pos}"` : '' })}</div>
     <div class="slide__shade"></div>
     <div class="container slide__content slide__content--light">
       <p class="w30">For ${site.audience}</p>
