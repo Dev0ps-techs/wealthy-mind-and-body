@@ -558,9 +558,9 @@ export const slides = [
   {
     title: 'Stay Fit from a Young Age',
     text: 'Introduce your child to the benefits of yoga and set them on the path to a healthy, active life. Our children’s yoga classes are designed to improve flexibility, strength, and coordination while promoting mindfulness and emotional balance.',
-    img: 'kids-yoga-partner-park',
-    pos: '50% 40%', // keep both children's heads and joined hands in view
-    imgAlt: 'Two children doing partner yoga on a blanket in a Dubai park',
+    img: 'kids-yoga-collage',
+    framed: true, // whole collage shown in a frame on the army green background
+    imgAlt: 'Collage of two children doing partner yoga poses in a Dubai park',
     primary: { label: 'Read More', href: 'https://www.youtube.com/@leechancekidsyoga4170' },
   },
 ];

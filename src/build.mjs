@@ -372,7 +372,7 @@ function heroCarousel(r) {
         ${buttons}
       </div>
       <div class="slide__photo">
-        <div class="slide__frame" style="aspect-ratio: ${dims(sl.img + '.webp').w} / ${dims(sl.img + '.webp').h}">${img(r, sl.img, sl.imgAlt || '', { eager: i === 0, sizes: '(min-width: 900px) 55vw, 80vw' })}</div>
+        <div class="slide__frame" style="aspect-ratio: ${dims(sl.img + '.webp').w} / ${dims(sl.img + '.webp').h}; width: min(100%, calc(64vh * ${(dims(sl.img + '.webp').w / dims(sl.img + '.webp').h).toFixed(3)}))">${img(r, sl.img, sl.imgAlt || '', { eager: i === 0, sizes: '(min-width: 900px) 55vw, 80vw' })}</div>
       </div>
     </div>
   </div>`;

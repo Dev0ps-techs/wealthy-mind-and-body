@@ -1035,3 +1035,14 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 .program-card:nth-child(3) > img { object-position: 50% 8%; }
 .program-card:nth-child(3) > img { object-position: 50% 50%; }
 .trio__card:nth-child(2) .trio__img img { object-position: 50% 48%; }
+
+/* Framed slides always show the whole picture */
+.slide__frame { max-height: none; background: #fff; }
+.slide__frame img { object-fit: contain; }
+@media (max-width: 900px) {
+  /* Framed slides show their picture on phones too, under the text */
+  .slide--framed .slide__photo { display: block; padding: 0 0 96px; }
+  .slide--framed .slide__content { padding-bottom: 28px; }
+  .slide--framed .slide__frame { transform: none; border-width: 6px; border-radius: 22px; }
+}
+.w30--footer { white-space: normal; width: auto; }
