@@ -467,7 +467,7 @@ ${trio(r)}
   <div class="container split-2">
     <div class="meet__media" data-reveal>
       <div class="meet__frame">${img(r, H.meet.img, 'Letchance Ngassa', { sizes: '(min-width: 900px) 40vw, 90vw' })}</div>
-      <div class="meet__sig" data-parallax="-0.06">${site.audience}<span>Coaching for women</span></div>
+      <div class="meet__sig" data-parallax="-0.06">Coaching for ${site.audience}</div>
     </div>
     <div data-reveal style="--d:.1s">
       <p class="eyebrow">${H.meet.eyebrow}</p>
