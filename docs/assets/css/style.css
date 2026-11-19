@@ -995,3 +995,9 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 .tt-card__shade { background: linear-gradient(180deg, transparent 65%, rgba(43, 53, 47, .7)); }
 .slide__arch { aspect-ratio: 2 / 3; max-height: 72vh; margin-inline: auto; }
 .slide__arch img { object-position: 50% 20%; }
+
+/* Framed slide: photo in a rounded frame beside the text, on dark green */
+.slide--framed { background: radial-gradient(circle at 80% 30%, #4f6155 0%, var(--sage-deep) 45%, var(--sage-ink) 100%); color: #fff; }
+.slide--framed .slide__content { padding-bottom: 120px; }
+.slide__frame { aspect-ratio: 1; max-height: 64vh; margin-inline: auto; border-radius: 32px; overflow: hidden; border: 8px solid rgba(255, 255, 255, .9); box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .55); transform: rotate(2deg); }
+.slide__frame img { width: 100%; height: 100%; object-fit: cover; }
