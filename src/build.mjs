@@ -147,7 +147,7 @@ ${base ? `<base href="${base}">` : ''}
 <title>${esc(fullTitle)}</title>
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${canonical}">
-<meta name="theme-color" content="#5B6E61">
+<meta name="theme-color" content="#2C4634">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${site.name}">
 <meta property="og:title" content="${esc(fullTitle)}">
