@@ -172,9 +172,9 @@
     const slides = $$('.slide', hero);
     const dots = $$('.hero__dot', hero);
     const cur = $('[data-hero-current]', hero);
-    const TIME = 7000;
+    const TIME = 6000;
     hero.style.setProperty('--slide-time', TIME + 'ms');
-    let i = 0, timer = null, paused = false;
+    let i = 0, timer = null;
     const go = (n) => {
       i = (n + slides.length) % slides.length;
       slides.forEach((s, k) => {
@@ -193,16 +193,11 @@
     };
     const schedule = () => {
       clearTimeout(timer);
-      if (!reduced && !paused) timer = setTimeout(() => go(i + 1), TIME);
+      timer = setTimeout(() => go(i + 1), TIME); // always keeps moving, like the original site
     };
-    const pause = (on) => { paused = on; hero.classList.toggle('hero--paused', on); if (on) clearTimeout(timer); else schedule(); };
     $('.hero__next', hero).addEventListener('click', () => go(i + 1));
     $('.hero__prev', hero).addEventListener('click', () => go(i - 1));
     dots.forEach((d, k) => d.addEventListener('click', () => go(k)));
-    hero.addEventListener('mouseenter', () => pause(true));
-    hero.addEventListener('mouseleave', () => pause(false));
-    hero.addEventListener('focusin', () => pause(true));
-    hero.addEventListener('focusout', () => pause(false));
     hero.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight') go(i + 1);
       if (e.key === 'ArrowLeft') go(i - 1);
