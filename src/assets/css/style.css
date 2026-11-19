@@ -1011,3 +1011,6 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 .slide--framed-wide .slide__split { grid-template-columns: 0.85fr 1.15fr; }
 .slide--framed-wide .slide__frame { transform: rotate(-1.5deg); max-height: none; }
 .slide--framed-wide .slide__title { font-size: clamp(2.4rem, 4.8vw, 4.2rem); }
+/* Explore cards: a little taller so the Blog quote shows in full */
+.trio__img { aspect-ratio: 4 / 3; }
+.trio__card:first-child .trio__img img { object-position: 50% 14%; }

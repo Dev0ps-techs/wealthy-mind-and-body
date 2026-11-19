@@ -406,7 +406,7 @@ function trio(r) {
         <ul>${links.map((l) => `<li><a href="${linkHref(r, l)}"${linkAttrs(l)}><span>${l.label}</span>${l.note ? `<small>${l.note}</small>` : icon('arrow')}</a></li>`).join('')}</ul>
       </details>`;
   const cards = [
-    { t: 'Blog', img: 'blog-cover', text: 'Articles, guided videos and daily mindset quotes to support your practice between sessions.', foot: `<a class="link-arrow" href="${r}blog/">Read More ${icon('arrow')}</a>`, href: 'blog/' },
+    { t: 'Blog', img: 'blog-quote-inquiry-mind', text: 'Articles, guided videos and daily mindset quotes to support your practice between sessions.', foot: `<a class="link-arrow" href="${r}blog/">Read More ${icon('arrow')}</a>`, href: 'blog/' },
     { t: 'Services', img: 'services-event', text: C.services.intro, foot: menu('Choose a service', serviceLinks), href: 'services/' },
     { t: 'Shop', img: 'shop-collage', text: 'Wellness essentials, active wear, ebooks and digital programs.', foot: menu('Choose a store', shopLinks), href: 'shop/' },
   ];
