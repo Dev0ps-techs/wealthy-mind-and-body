@@ -407,7 +407,7 @@ function trio(r) {
       </details>`;
   const cards = [
     { t: 'Blog', img: 'blog-quote-inquiry-mind', text: 'Articles, guided videos, daily mindset quotes, and healthy eating advice and guidance to support your practice between sessions.', foot: `<a class="link-arrow" href="${r}blog/">Read More ${icon('arrow')}</a>`, href: 'blog/' },
-    { t: 'Services', img: 'services-stage-selfie', text: C.services.intro, foot: menu('Choose a service', serviceLinks), href: 'services/' },
+    { t: 'Services', img: 'services-stage-selfie', text: C.services.intro + ' <span class="hl">Private / Group sessions in:</span> Mindset & Wellness Coaching, Mind & Body Movement Sequences, Breathwork Sessions, and Workshops, Seminars, Trainings & Events.', foot: menu('Choose a service', serviceLinks), href: 'services/' },
     { t: 'Shop', img: 'be-fit-flex-logo', text: 'Our shop will be offering: <span class="hl">Physical products:</span> our Be Fit & Flex clothing brand, books, affirmation cards, MBM poses & alignment cards, yoga & fitness products, wellness products and nutrition products. <span class="hl">Digital products:</span> ebooks, online courses & programmes, audio products, and workbooks & templates.', foot: menu('Choose a store', shopLinks), href: 'shop/' },
   ];
   return `
