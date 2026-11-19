@@ -141,6 +141,11 @@ export const offer = {
       title: 'Workshops, Trainings & Seminars',
       text: 'Interactive workshops, trainings and seminars that inspire growth, teach practical skills and share valuable insights in a supportive environment, for schools, corporates and communities.',
     },
+    {
+      icon: 'people',
+      title: 'Private & Group Sessions',
+      text: 'Tailored one-on-one or group sessions wherever you are. We bring our expert coaching to the comfort of your home, school, corporate office, hospital, or even local parks, in person across the UAE and online around the world.',
+    },
   ],
 };
 
