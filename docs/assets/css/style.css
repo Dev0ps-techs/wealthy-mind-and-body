@@ -1033,3 +1033,4 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 }
 .slide--bottom .slide__bg img { transform: none !important; }
 .program-card:nth-child(3) > img { object-position: 50% 8%; }
+.program-card:nth-child(3) > img { object-position: 50% 50%; }
