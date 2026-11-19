@@ -536,7 +536,7 @@ export const slides = [
     title: 'Become the Woman You Were Created to Be',
     text: 'Supporting women in creating lasting transformation through mindset mastery, mindful movement, and soulful living.',
     note: 'Helping Women Rise Into Their Most Confident, Healthy and Aligned Selves.',
-    img: 'meditation-sunset',
+    img: 'be-fit-flex-tree-pose',
     primary: { label: 'Start Your Journey', href: 'booking/' },
     secondary: { label: 'Join Live Classes', href: '#live' },
   },

@@ -357,7 +357,7 @@ function heroCarousel(r) {
         <p class="slide__note">${sl.note}</p>
       </div>
       <div class="slide__photo">
-        <div class="slide__arch">${img(r, sl.img, 'A woman meditating at sunrise', { eager: i === 0, sizes: '(min-width: 900px) 40vw, 80vw' })}</div>
+        <div class="slide__arch">${img(r, sl.img, 'Letchance Ngassa in tree pose wearing Be Fit & Flex active wear', { eager: i === 0, sizes: '(min-width: 900px) 40vw, 80vw' })}</div>
         <span class="slide__badge">${site.tagline}</span>
       </div>
     </div>

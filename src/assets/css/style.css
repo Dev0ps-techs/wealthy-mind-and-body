@@ -993,3 +993,5 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 .tt-card__media iframe { opacity: 0; transition: opacity .6s var(--ease); background: #000; }
 .tt-card.is-playing .tt-card__media iframe { opacity: 1; }
 .tt-card__shade { background: linear-gradient(180deg, transparent 65%, rgba(43, 53, 47, .7)); }
+.slide__arch { aspect-ratio: 2 / 3; max-height: 72vh; margin-inline: auto; }
+.slide__arch img { object-position: 50% 20%; }
