@@ -151,9 +151,17 @@ ${base ? `<base href="${base}">` : ''}
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${r}assets/css/style.css">
 <script type="application/ld+json">${JSON.stringify(jsonld)}</script>
-<script>document.documentElement.classList.add('js')</script>
+<script>(function(d){d.classList.add('js','is-loading');if('scrollRestoration' in history)history.scrollRestoration='manual';try{if(sessionStorage.getItem('wmb-seen'))d.classList.add('quick-load')}catch(e){}})(document.documentElement)</script>
 </head>
 <body>
+<div class="loader" aria-hidden="true">
+  <div class="loader__in">
+    <svg class="loader__mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round">${ICONS.lotus}</svg>
+    <span class="loader__name">${wordmark()}</span>
+    <span class="loader__tag">${site.tagline}</span>
+    <span class="loader__bar"><i></i></span>
+  </div>
+</div>
 <a class="skip" href="#main">Skip to content</a>
 <div class="progress" aria-hidden="true"></div>
 <div class="topbar">

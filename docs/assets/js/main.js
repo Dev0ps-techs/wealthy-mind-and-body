@@ -88,13 +88,44 @@
   });
 
   /* ---------- reveal on scroll ---------- */
-  const revealEls = $$('[data-reveal], .split');
-  if ('IntersectionObserver' in window && !reduced) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-    revealEls.forEach((el) => io.observe(el));
-  } else revealEls.forEach((el) => el.classList.add('in'));
+  const startReveals = () => {
+    const revealEls = $$('[data-reveal], .split');
+    if ('IntersectionObserver' in window && !reduced) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      revealEls.forEach((el) => io.observe(el));
+    } else revealEls.forEach((el) => el.classList.add('in'));
+  };
+
+  /* ---------- page-load animation + always start at the top ---------- */
+  const root = document.documentElement;
+  const loader = $('.loader');
+  const toTopNow = () => window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  toTopNow();
+  const quick = root.classList.contains('quick-load');
+  const minTime = reduced ? 0 : quick ? 550 : 1700;
+  const t0 = performance.now();
+  let finished = false;
+  const finish = () => {
+    if (finished) return;
+    finished = true;
+    toTopNow();
+    root.classList.remove('is-loading');
+    loader?.classList.add('is-done');
+    try { sessionStorage.setItem('wmb-seen', '1'); } catch {}
+    setTimeout(startReveals, reduced ? 0 : 250);
+    setTimeout(() => loader?.classList.add('is-gone'), 1100);
+    // A link to a section (e.g. shop/#ebooks) glides there once the page is shown
+    const id = decodeURIComponent(location.hash.slice(1));
+    const target = id && document.getElementById(id);
+    if (target && id !== 'main') setTimeout(() => target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' }), reduced ? 0 : 900);
+  };
+  const whenLoaded = () => setTimeout(finish, Math.max(0, minTime - (performance.now() - t0)));
+  if (document.readyState === 'complete') whenLoaded(); else addEventListener('load', whenLoaded);
+  setTimeout(finish, 4500); // never keep visitors waiting on a slow image
+  // Coming back with the browser's Back button also starts at the top
+  addEventListener('pageshow', (e) => { if (e.persisted) toTopNow(); });
 
   /* ---------- 3D tilt on pillar cards ---------- */
   if (!reduced && matchMedia('(hover: hover)').matches) {
