@@ -392,14 +392,7 @@ function trio(r) {
     { t: 'Shop', img: 'shop-collage', text: 'Wellness essentials, active wear, ebooks and digital programs.', foot: menu('Choose a store', shopLinks), href: 'shop/' },
   ];
   return `
-<section class="section intro" id="explore">
-  <div class="container">
-    <div class="section-head" data-reveal>
-      <p class="eyebrow">Explore</p>
-      <h2 class="h-display">Everything you need, in one place</h2>
-      <p>${C.hero.tagline}</p>
-    </div>
-  </div>
+<section class="section intro" id="explore" aria-label="Explore">
   <div class="container trio">
     ${cards.map((c, i) => `
     <article class="trio__card" data-reveal style="--d:${i * 0.1}s">
