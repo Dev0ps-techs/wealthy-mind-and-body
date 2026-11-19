@@ -467,7 +467,7 @@ export const home = {
       title: 'Mind & Body Movement',
       text: 'Daily movement sessions promoting strength, mobility and wellbeing.',
       points: ['Hatha Yoga', 'Yin Yoga', 'Prenatal Yoga', 'Vinyasa', 'Calisthenics', 'Wall Pilates', 'Children Yoga'],
-      img: 'stretch-mat', icon: 'stretch', service: 'Mind & Body Movement Sequences',
+      img: 'yoga-pose-blue', icon: 'stretch', service: 'Mind & Body Movement Sequences',
     },
     {
       title: 'Breathwork',
