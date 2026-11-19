@@ -408,7 +408,7 @@ function trio(r) {
   const cards = [
     { t: 'Blog', img: 'blog-quote-inquiry-mind', text: 'Articles, guided videos, daily mindset quotes, and healthy eating advice and guidance to support your practice between sessions.', foot: `<a class="link-arrow" href="${r}blog/">Read More ${icon('arrow')}</a>`, href: 'blog/' },
     { t: 'Services', img: 'services-stage-selfie', text: C.services.intro, foot: menu('Choose a service', serviceLinks), href: 'services/' },
-    { t: 'Shop', img: 'be-fit-flex-logo', text: 'Physical products such as active wear from our Be Fit & Flex clothing brand and wellness essentials, plus ebooks and digital programs.', foot: menu('Choose a store', shopLinks), href: 'shop/' },
+    { t: 'Shop', img: 'be-fit-flex-logo', text: 'Physical products: our Be Fit & Flex clothing brand, books, affirmation cards, MBM poses & alignment cards, yoga & fitness products, wellness products and nutrition products. Digital products: ebooks, online courses & programmes, audio products, and workbooks & templates.', foot: menu('Choose a store', shopLinks), href: 'shop/' },
   ];
   return `
 <section class="section intro" id="explore" aria-label="Explore">
@@ -913,7 +913,7 @@ ${pageHero(r, { eyebrow: 'Shop · Coming soon', title: S.title, text: S.text, im
         <span class="store__body">
           <span class="tag">${l.note}</span>
           <strong>${l.label}</strong>
-          <span>${i === 0 ? 'Wellness products and Be Fit &amp; Flex active wear' : 'Ebooks, guided programs and online classes'}</span>
+          <span>${i === 0 ? 'Be Fit &amp; Flex clothing, books, affirmation cards, MBM poses &amp; alignment cards, yoga &amp; fitness, wellness and nutrition products' : 'Ebooks, online courses &amp; programmes, audio products, workbooks &amp; templates'}</span>
           <span class="link-arrow">${l.ext ? `Shop on ${l.note}` : `${l.note} store opening soon`} ${icon('arrow')}</span>
         </span>
       </a>`).join('')}
