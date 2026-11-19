@@ -122,24 +122,24 @@ export const offer = {
   text: 'Unlock the full potential of your mind and body with our services. Book today, and you’ll be thanking yourself—now and in the days to come!',
   items: [
     {
-      icon: 'breath',
-      title: 'Guided Breathing Techniques',
-      text: 'It improves focus, reduce stress, enhance lung capacity, balance emotions, detoxify the body, and boost overall well-being.',
+      icon: 'coachMind',
+      title: 'Mindset & Wellness Coaching',
+      text: 'Break through limiting beliefs, build confidence and a growth mindset. We integrate mind, body and spirit with personalized guidance on lifestyle, nutrition, stress management and personal growth.',
     },
     {
-      icon: 'lotus',
-      title: 'Best Yogafit Classes',
-      text: 'The classes combine yoga and fitness to strengthen the body, improve flexibility, and promote overall well-being.',
+      icon: 'movePose',
+      title: 'Mind & Body Movement Sequences',
+      text: 'Yoga and fitness combined to strengthen the body and improve flexibility: Hatha, Yin, Prenatal, Vinyasa, Calisthenics, Wall Pilates and Children’s Yoga.',
     },
     {
-      icon: 'leaf',
-      title: 'Holistic Health Coaching',
-      text: 'We focus on the integration of mind, body, and spirit to achieve overall well-being, offering personalized guidance to improve lifestyle, nutrition, stress management, and personal growth.',
+      icon: 'lungs',
+      title: 'Breathwork',
+      text: 'Guided breathing that improves focus, reduces stress, enhances lung capacity, balances emotions, regulates the nervous system and boosts overall well-being.',
     },
     {
-      icon: 'spark',
-      title: 'Best Workshops',
-      text: 'Our workshops offer interactive learning to inspire growth, practical skills, and valuable insights in a supportive environment.',
+      icon: 'easel',
+      title: 'Workshops, Trainings & Seminars',
+      text: 'Interactive workshops, trainings and seminars that inspire growth, teach practical skills and share valuable insights in a supportive environment, for schools, corporates and communities.',
     },
   ],
 };

@@ -53,6 +53,10 @@ function img(r, name, alt = '', { cls = '', sizes = '100vw', eager = false, attr
 }
 
 const ICONS = {
+  coachMind: '<path d="M14.5 20v-2.5h2a2 2 0 0 0 2-2V13l1.6-.6-1.6-3A7 7 0 1 0 8 15.8V20"/><path d="M11.6 12.6s-2.6-1.5-2.6-3.2a1.4 1.4 0 0 1 2.6-.8 1.4 1.4 0 0 1 2.6.8c0 1.7-2.6 3.2-2.6 3.2z" fill="currentColor"/>',
+  movePose: '<circle cx="12" cy="4" r="1.8"/><path d="M3 8.5 12 9l9-.5M12 9v4.5l-4.5 3.5L5 20M12 13.5l4.5 3.5L19 20"/>',
+  lungs: '<path d="M12 3v8M12 11c-1.5 0-2.5-1-2.5-1M12 11c1.5 0 2.5-1 2.5-1"/><path d="M9 7.5C6 7 3.5 10 3.5 14.5c0 3 .8 5.5 3 5.5 2.4 0 2.5-2 2.5-4.5V7.5zM15 7.5c3-.5 5.5 2.5 5.5 7 0 3-.8 5.5-3 5.5-2.4 0-2.5-2-2.5-4.5V7.5z"/>',
+  easel: '<rect x="3" y="3.5" width="18" height="11" rx="1.5"/><path d="M12 14.5V18M8 21l4-3 4 3M7 11l3-3 2.5 2L17 6.5"/>',
   arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
   play: '<path d="M8 5.5v13l11-6.5z" fill="currentColor" stroke="none"/>',
   phone: '<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/>',

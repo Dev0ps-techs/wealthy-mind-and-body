@@ -974,3 +974,10 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 .slide__note, .wordmark em, .meet__role { color: var(--rose-deep); }
 .t-dot.is-active { background: var(--rose-deep); }
 .mission { border-left-color: var(--rose-deep); }
+
+/* What we offer: outstanding rose icon badges */
+.offer__card .icon-badge { position: relative; width: 68px; height: 68px; background: var(--rose-grad); color: #fff; box-shadow: 0 14px 28px -14px rgba(163, 64, 95, .7); transition: transform .6s var(--ease); }
+.offer__card .icon-badge::after { content: ''; position: absolute; inset: -6px; border-radius: 50%; border: 1px dashed rgba(163, 64, 95, .35); transition: transform 1.2s var(--ease); }
+.offer__card .icon-badge .icon { width: 32px; height: 32px; stroke-width: 1.5; }
+.offer__card:hover .icon-badge { transform: translateY(-3px) scale(1.05); }
+.offer__card:hover .icon-badge::after { transform: rotate(90deg); }
