@@ -482,7 +482,7 @@ export const home = {
       title: 'Breathwork',
       text: 'Guided breathing to calm the mind, restore energy and find inner peace.',
       points: ['Mindfulness practices', 'Meditation', 'Chakras', 'Energy', 'Nervous system regulation', 'Inner peace'],
-      img: 'beach-meditation', icon: 'breath', service: 'Breathwork Sessions',
+      img: 'breathwork-prayers-meditation', icon: 'breath', service: 'Breathwork Sessions',
     },
   ],
   resources: {
