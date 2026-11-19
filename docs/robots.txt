@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://wealthymindandbody.com/sitemap.xml

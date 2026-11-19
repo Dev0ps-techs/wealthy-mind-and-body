@@ -1,0 +1,11 @@
+{
+  "name": "wealthy-mind-and-body",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Wealthy Mind and Body — website",
+  "type": "module",
+  "scripts": {
+    "build": "node src/build.mjs",
+    "start": "node src/build.mjs && npx --yes serve docs -l 4173"
+  }
+}
