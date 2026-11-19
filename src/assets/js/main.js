@@ -250,7 +250,7 @@
   /* ---------- live session countdown (Dubai time, UTC+4, no DST) ---------- */
   const live = $('[data-live]');
   if (live) {
-    const HOUR = +live.dataset.hour || 5;
+    const HOUR = +live.dataset.hour || 17;
     const DUR = +live.dataset.duration || 30;
     const OFFSET = 4 * 3600e3;
     const nextStart = (now = Date.now()) => {

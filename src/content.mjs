@@ -488,10 +488,10 @@ export const home = {
     cta: 'Get Free Resources',
   },
   live: {
-    title: 'Join Me Live Every Morning',
-    time: '5:00 – 5:30 AM',
+    title: 'Join Me Live Every Evening',
+    time: '5:00 PM – 5:30 PM',
     timezone: 'Asia/Dubai',
-    startHour: 5,
+    startHour: 17,
     durationMin: 30,
     session: 'Mind & Body Movement with Letchance Ngassa',
     videos: [
@@ -506,7 +506,7 @@ export const home = {
   ],
   community: {
     title: 'You’re Not Meant to Do Life Alone',
-    intro: 'Join the Wealthy Mind and Body membership, a supportive online wellness community for women 30+ in Dubai, the UAE and around the world. Members get live morning yoga and mind & body movement classes, mindset coaching, breathwork and meditation sessions, monthly wellness challenges and group coaching, with an accountability community that helps you build healthy habits, reduce stress, gain confidence and feel aligned in your mind and body.',
+    intro: 'Join the Wealthy Mind and Body membership, a supportive online wellness community for women 30+ in Dubai, the UAE and around the world. Members get live evening yoga and mind & body movement classes, mindset coaching, breathwork and meditation sessions, monthly wellness challenges and group coaching, with an accountability community that helps you build healthy habits, reduce stress, gain confidence and feel aligned in your mind and body.',
     items: ['Exclusive classes', 'Monthly challenges', 'Group coaching', 'Accountability community'],
     cta: 'Join the Community',
     img: 'group-lessons',

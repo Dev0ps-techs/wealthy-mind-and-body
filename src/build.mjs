@@ -171,7 +171,7 @@ ${base ? `<base href="${base}">` : ''}
 <div class="progress" aria-hidden="true"></div>
 <div class="topbar">
   <div class="container topbar__in">
-    <span class="topbar__left"><span class="w30">For ${site.audience}</span><a class="topbar__live" href="${r}#live"><span class="live-dot"></span> Live every morning · 5:00 AM Dubai time</a></span>
+    <span class="topbar__left"><span class="w30">For ${site.audience}</span><a class="topbar__live" href="${r}#live"><span class="live-dot"></span> Live every evening · 5:00 PM Dubai time</a></span>
     <span class="topbar__links">
       <a href="tel:${site.phone}">${icon('phone')} ${site.phoneDisplay}</a>
       <a href="mailto:${site.emails[1]}">${icon('mail')} ${site.emails[1]}</a>
@@ -826,7 +826,7 @@ ${servicesExtras(r)}
 
 function bookingPage(r) {
   const B = C.booking;
-  const options = [...C.serviceMenu.map((m) => m.title), ...C.home.programs.map((p) => p.title), 'Live Morning Classes', 'Community Membership', ...C.services.list, ...C.classes.items.map((c) => c.title), 'Private and Group Sessions', 'Mind and Body Fit', 'Workshop / Retreat', 'Other']
+  const options = [...C.serviceMenu.map((m) => m.title), ...C.home.programs.map((p) => p.title), 'Live Evening Classes', 'Community Membership', ...C.services.list, ...C.classes.items.map((c) => c.title), 'Private and Group Sessions', 'Mind and Body Fit', 'Workshop / Retreat', 'Other']
     .filter((v, i, a) => a.indexOf(v) === i);
   return `
 ${pageHero(r, { eyebrow: 'Booking', title: B.title, text: B.paragraphs[0], imgName: 'meditation-sunset', crumbs: [{ label: 'Booking' }] })}
