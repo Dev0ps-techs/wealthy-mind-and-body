@@ -469,7 +469,7 @@ export const home = {
     {
       title: 'Mindset & Wellness Coach',
       text: 'Transform limiting beliefs, build confidence and calm your nervous system.',
-      points: ['Conscious mind', 'Subconscious mind', 'Nervous system', 'Mind-body connection', 'Authenticity', 'Spiritual awareness', 'Personal growth & development', 'Emotional wellbeing', 'Emotional intelligence', 'Nutrition awareness', 'Positive habits & behaviour', 'Goal setting', 'Visualisation', 'Overcoming limiting beliefs', 'Self-awareness', 'Positive & growth mindset', 'Self-confidence', 'Work-life balance', 'Stress management', 'Healthy boundaries', 'Resilience', 'Sleep & recovery'],
+      points: ['Conscious mind', 'Subconscious mind', 'Nervous system', 'Mind-body connection', 'Authenticity', 'Spiritual awareness', 'Personal growth & development', 'Emotional wellbeing', 'Emotional intelligence', 'Nutrition awareness', 'Positive habits & behaviour', 'Goal setting', 'Visualisation', 'Overcoming limiting beliefs', 'Self-awareness', 'Positive & growth mindset', 'Self-confidence', 'Work-life balance', 'Stress management', 'Healthy boundaries', 'Resilience', 'Sleep & recovery', 'Accountability', 'Gratitude', 'Self-love', 'Self-care', 'Manifestation'],
       img: 'najahi-event-lisa-nichols', icon: 'mind', service: 'Mindset Coaching',
     },
     {
