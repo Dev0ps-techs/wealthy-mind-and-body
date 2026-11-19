@@ -1014,3 +1014,10 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 /* Explore cards: a little taller so the Blog quote shows in full */
 .trio__img { aspect-ratio: 4 / 3; }
 .trio__card:first-child .trio__img img { object-position: 50% 14%; }
+
+/* Explore dropdowns use the signature rose button style */
+.trio__menu { background: #fff; border-color: #cc7b92; box-shadow: 0 10px 24px -14px rgba(163, 64, 95, .55); }
+.trio__menu summary { background: var(--rose-grad); color: var(--sage-ink); transition: filter .3s; }
+.trio__menu summary:hover { filter: brightness(1.05); }
+.trio__menu summary .icon { color: var(--sage-ink); }
+.trio__menu[open] summary { border-bottom-color: #cc7b92; }
