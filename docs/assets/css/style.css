@@ -1021,3 +1021,14 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 .trio__menu summary:hover { filter: brightness(1.05); }
 .trio__menu summary .icon { color: var(--sage-ink); }
 .trio__menu[open] summary { border-bottom-color: #cc7b92; }
+
+/* Full-background slide with a caption in the photo: anchor to the top, text along the bottom */
+.slide--bottom { align-items: flex-end; }
+.slide--bottom .slide__bg img { object-position: 50% 0; }
+.slide--bottom .slide__shade { background: linear-gradient(0deg, rgba(43, 53, 47, 0.9) 0%, rgba(43, 53, 47, 0.55) 35%, rgba(43, 53, 47, 0) 62%); }
+.slide--bottom .slide__content { padding-top: 0; padding-bottom: 110px; }
+.slide--bottom .slide__title { font-size: clamp(2.4rem, 5vw, 4.4rem); margin-top: 12px; }
+@media (max-width: 600px) {
+  .slide--bottom .slide__shade { background: linear-gradient(0deg, rgba(43, 53, 47, 0.92) 0%, rgba(43, 53, 47, 0.6) 55%, rgba(43, 53, 47, 0) 80%); }
+}
+.slide--bottom .slide__bg img { transform: none !important; }

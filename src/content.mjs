@@ -551,7 +551,7 @@ export const slides = [
     title: 'Empower your Mind and Body',
     text: 'Unleash your spirit, conquer challenges and embark on an exhilarating journey to a vibrant joyful life',
     img: 'dream-big-skydive',
-    framed: true, // shown whole so its "Dream big" caption stays visible
+    valign: 'bottom', // full background; text sits low so the "Dream big" caption at the top stays clear
     imgAlt: 'Dream big, the sky is your limit! Letchance Ngassa skydiving over the Palm Jumeirah, Dubai',
     primary: { label: 'Read More', href: 'https://youtu.be/MDYtyErvpEY?si=YoP5vo47C2evWmIb' },
   },
