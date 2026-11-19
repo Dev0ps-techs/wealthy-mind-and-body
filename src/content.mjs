@@ -331,7 +331,7 @@ export const posts = [
     title: '10 Minutes of Wealthy Mind and Bodys',
     date: '2025-07-26',
     type: 'Video',
-    cover: 'cliff-yoga',
+    cover: 'video-mind-body-10min',
     excerpt: 'Check out this 10 minutes mind and body movements to feel relax.',
     body: [
       ['p', 'Check out this 10 minutes mind and body movements to feel relax.'],
@@ -442,7 +442,7 @@ export const home = {
   pillars: [
     { key: 'Mind', emoji: '🧠', img: 'mindset-event', text: 'Develop confidence, resilience, emotional intelligence and a growth mindset.' },
     { key: 'Body', emoji: '💪', img: 'yoga-pose-blue', text: 'Strengthen your body through yoga, mobility, breathwork and intentional movement.' },
-    { key: 'Soul', emoji: '✨', img: 'meditation-sunset', text: 'Reconnect with purpose, gratitude, inner peace and spiritual wellbeing.' },
+    { key: 'Breathwork', emoji: '🌬️', img: 'meditation-sunset', text: 'Calm your nervous system and find inner peace through mindfulness, meditation and guided breathing.' },
   ],
   meet: {
     eyebrow: 'Meet your coach',
@@ -461,7 +461,7 @@ export const home = {
       title: 'Mindset & Wellness Coach',
       text: 'Transform limiting beliefs, build confidence and calm your nervous system.',
       points: ['Conscious mind', 'Subconscious mind', 'Nervous system'],
-      img: 'mindset-coaching-class', icon: 'mind', service: 'Mindset Coaching',
+      img: 'mindset-event', icon: 'mind', service: 'Mindset Coaching',
     },
     {
       title: 'Mind & Body Movement',
@@ -489,14 +489,14 @@ export const home = {
   },
   live: {
     title: 'Join Me Live Every Morning',
-    time: '5:00 AM – 5:30 AM',
+    time: '5:00 – 5:30 AM',
     timezone: 'Asia/Dubai',
     startHour: 5,
     durationMin: 30,
     session: 'Mind & Body Movement with Letchance Ngassa',
     videos: [
-      { id: 'Ej4V2iTvoOc', title: '10 Minutes of Mind and Body Movements', cover: 'cliff-yoga' },
-      { id: 'MDYtyErvpEY', title: 'Empower your Mind and Body', cover: 'skydive-palm' },
+      { id: 'Ej4V2iTvoOc', title: '30 Minutes of Full Body Stretching & Flexibility', cover: 'video-mind-body-10min' },
+      { id: 'MDYtyErvpEY', title: 'Empower your Mind and Body', cover: 'video-empower' },
     ],
   },
   testimonials: [
@@ -506,6 +506,7 @@ export const home = {
   ],
   community: {
     title: 'You’re Not Meant to Do Life Alone',
+    intro: 'Join the Wealthy Mind and Body membership, a supportive online wellness community for women 30+ in Dubai, the UAE and around the world. Members get live morning yoga and mind & body movement classes, mindset coaching, breathwork and meditation sessions, monthly wellness challenges and group coaching, with an accountability community that helps you build healthy habits, reduce stress, gain confidence and feel aligned in your mind and body.',
     items: ['Exclusive classes', 'Monthly challenges', 'Group coaching', 'Accountability community'],
     cta: 'Join the Community',
     img: 'group-lessons',

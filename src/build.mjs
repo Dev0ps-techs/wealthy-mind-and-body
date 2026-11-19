@@ -407,7 +407,7 @@ function aboutBand(r) {
   return `
 <section class="section about-band">
   <div class="container split-2">
-    <div data-reveal>${videoCard(r, site.introVideo, 'cliff-yoga', 'Watch: 10 minutes of mind & body movement')}</div>
+    <div data-reveal>${videoCard(r, site.introVideo, 'video-mind-body-10min', 'Watch: 30 minutes of full body stretching & flexibility')}</div>
     <div data-reveal style="--d:.1s">
       <p class="eyebrow">All about Wealthy Mind &amp; Body</p>
       <h2 class="h-display">${C.aboutMBM.text}</h2>
@@ -579,7 +579,7 @@ ${benefitsSection(r)}
   <div class="container">
     <div class="section-head" data-reveal>
       <p class="eyebrow">The Three Pillars</p>
-      <h2 class="h-display">Mind. Body. <em>Soul.</em></h2>
+      <h2 class="h-display">Mind. Body. <em>Breathwork.</em></h2>
       <p>${site.positioning}</p>
     </div>
     <div class="pillar-cards">
@@ -602,6 +602,7 @@ ${benefitsSection(r)}
       <div class="community__body">
         <p class="eyebrow eyebrow--light">Community Membership · ${site.audience}</p>
         <h2 class="h-display">${H.community.title}</h2>
+        <p class="community__intro">${H.community.intro}</p>
         <ul class="ticks">${H.community.items.map((it) => `<li>${icon('check')} ${it}</li>`).join('')}</ul>
         <a class="btn btn--rose" href="https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hi Letchance! I’d love to join the Wealthy Mind and Body community.')}" target="_blank" rel="noopener"><span>${H.community.cta}</span>${icon('arrow')}</a>
       </div>
@@ -696,7 +697,7 @@ function about(r) {
 ${pageHero(r, { eyebrow: A.missionLabel, title: A.mission, text: A.belief, imgName: 'beach-meditation', crumbs: [{ label: 'About us' }] })}
 <section class="section">
   <div class="container split-2">
-    <div data-reveal>${videoCard(r, site.introVideo, 'cliff-yoga', 'Watch: Mind & Body Movement')}</div>
+    <div data-reveal>${videoCard(r, site.introVideo, 'video-mind-body-10min', 'Watch: Mind & Body Movement')}</div>
     <div data-reveal style="--d:.1s">
       <p class="eyebrow">${A.title}</p>
       <h2 class="h-display">${A.text}</h2>
