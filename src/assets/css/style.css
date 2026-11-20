@@ -1151,3 +1151,6 @@ html.is-loading, html.is-loading body { overflow: hidden; }
   .meet .meet__media { max-width: 400px; position: sticky; top: calc(var(--header-h) + 40px); }
 }
 .meet .split-2 > div:last-child p { max-width: none; font-size: 1rem; line-height: 1.7; }
+/* Big WHY title: white on dark military green */
+.big-why { display: inline-block; margin-bottom: 10px; padding: 6px 16px; border-radius: 10px; background: linear-gradient(135deg, #3a5642 0%, #2c4634 55%, #223829 100%); color: #fff; font-size: 1.35rem; box-shadow: 0 10px 22px -14px rgba(34, 56, 41, .8); }
+.big-why { display: block; width: fit-content; }
