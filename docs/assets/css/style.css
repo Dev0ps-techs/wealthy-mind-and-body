@@ -1154,3 +1154,10 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 /* Big WHY title: white on dark military green */
 .big-why { display: inline-block; margin-bottom: 10px; padding: 6px 16px; border-radius: 10px; background: linear-gradient(135deg, #3a5642 0%, #2c4634 55%, #223829 100%); color: #fff; font-size: 1.35rem; box-shadow: 0 10px 22px -14px rgba(34, 56, 41, .8); }
 .big-why { display: block; width: fit-content; }
+/* Meet section: match the "Our approach" section proportions and text size */
+@media (min-width: 901px) {
+  .meet .split-2 { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); }
+  .meet .meet__media { max-width: 420px; margin-left: auto; }
+}
+.meet .split-2 > div:last-child p { font-size: inherit; line-height: inherit; }
+.meet .split-2 > div:last-child p:not(.eyebrow):not(.meet__role) { font-size: 1rem; }
