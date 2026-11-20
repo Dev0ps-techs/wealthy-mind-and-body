@@ -192,7 +192,7 @@ export const classes = {
 export const features = {
   title: 'Our Features',
   quote:
-    'The body is a living temple, where the mind shapes the vision, emotions bring it to life, the body holds it steady, and energy keeps it thriving. When they work in unison, the temple becomes a powerful force of balance and vitality.',
+    'Your body is a living temple. Your mind shapes your vision, your thoughts build your belief system, and your emotions bring your inner world to life. Movement keeps your body active, energy fuels your vitality, while nourishing food and mindful breathing sustain it. When the mind, body, emotions and energy work in harmony, your temple becomes a powerful source of balance, strength and holistic well-being.',
   img: 'stretch-mat',
   items: [
     {
@@ -439,6 +439,9 @@ export const posts = [
 ];
 
 /* ---------- New Wealthy Mind and Body homepage (from the brand brief) ---------- */
+export const templeIntro =
+  'Your body is a living temple. Your mind shapes your vision, your thoughts build your belief system, and your emotions bring your inner world to life. Movement keeps your body active, energy fuels your vitality, while nourishing food and mindful breathing sustain it. When the mind, body, emotions and energy work in harmony, your temple becomes a powerful source of balance, strength and holistic well-being.';
+
 export const home = {
   hero: {
     overline: 'Where Modern Wellness Meets Mind, Body & Soul Transformation',

@@ -539,7 +539,7 @@ ${offerSection(r)}
 <section class="section section--sand programs">
   <div class="container">
     <div class="section-head section-head--row" data-reveal>
-      <div><p class="eyebrow">Featured Programs</p><h2 class="h-display">Programs for <em>${site.audience}</em></h2></div>
+      <div><p class="eyebrow">Featured Programs</p><h2 class="h-display">Programs for <em>${site.audience}</em></h2><p class="temple-intro">${C.templeIntro}</p></div>
       ${btn(r + 'services/', 'All services', 'btn btn--outline')}
     </div>
     <div class="program-cards">
