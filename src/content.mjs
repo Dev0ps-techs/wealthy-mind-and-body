@@ -89,7 +89,7 @@ export const aboutMBM = {
   missionLabel: 'Our Mission Statement',
   mission: 'Transform your mind. Strengthen your body. Harness the power of your breath.',
   belief:
-    'At Wealthy Mind and Body, we believe in the transformative power of body movement and self-discovery to unlock your potential and elevate your well-being.',
+    'At Wealthy Mind and Body, we believe that when a woman prioritizes her wellbeing and invests in herself, she doesn’t just transform her own life, she becomes better equipped to thrive, pursue her goals with confidence, and positively impact her family, relationships, career, and community.',
   wellness:
     'At Wealthy Mind and Body, we believe that true wellness is not just about physical health, but a harmonious balance of the mind, body, and spirit. Our dedicated team is committed to guiding you on a transformative journey towards optimal well-being.',
   approachTitle: 'Our Holistic Approach',
