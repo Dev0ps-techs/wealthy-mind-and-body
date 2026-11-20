@@ -85,7 +85,7 @@ export const kids = {
 
 export const aboutMBM = {
   title: 'About Wealthy Mind and Body',
-  text: 'Our approach is combining mindset coaching with yoga sessions to promote overall well-being and personal development.',
+  text: 'Our approach is combining mindset coaching with Mind & Body Movement and breathwork sessions to promote overall well-being and personal development.',
   missionLabel: 'Our Mission Statement',
   mission: 'Transform your mind. Strengthen your body. Harness the power of your breath.',
   belief:
