@@ -1136,3 +1136,4 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 .programs .section-head--row > div { max-width: 760px; }
 .temple-intro { margin: 18px 0 0; padding-left: 18px; border-left: 3px solid var(--rose); font-family: var(--font-display); font-style: italic; font-size: clamp(1.15rem, 1.6vw, 1.35rem); line-height: 1.55; color: var(--sage-ink); }
 .mission__text { margin: 12px 0 0; font-family: var(--font-body); font-style: normal; font-size: 1rem; line-height: 1.65; color: rgba(255, 255, 255, .88); }
+.mission > span + .mission__text { margin-top: 6px; }
