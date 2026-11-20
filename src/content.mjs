@@ -87,7 +87,7 @@ export const aboutMBM = {
   title: 'About Wealthy Mind and Body',
   text: 'Our approach is combining mindset coaching with yoga sessions to promote overall well-being and personal development.',
   missionLabel: 'Our Mission Statement',
-  mission: 'Empower our Mind and Body',
+  mission: 'Transform your mind. Strengthen your body. Harness the power of your breath.',
   belief:
     'At Wealthy Mind and Body, we believe in the transformative power of body movement and self-discovery to unlock your potential and elevate your well-being.',
   wellness:
