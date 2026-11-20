@@ -466,7 +466,6 @@ export const home = {
       'As a Mindset and Wellness Coach and Mind & Body Movement Specialist with many years of experience, I believe that true wellness goes far beyond physical health and appearance. Real transformation happens when the mind, body, and soul work together in harmony, creating a strong foundation for a healthier, happier, and more fulfilling life.',
       'Whether you book a 15- to 60-minute coaching session, a Mind & Body Movement sequence, or a Breathwork session, you’ll begin to experience positive shifts in your thoughts, energy, and overall wellbeing. Over time, these small shifts will lead to profound and lasting transformation.',
       '<strong class="big-why">The Big WHY Behind Wealthy Mind & Body.</strong> I created WMB because research and experience have shown that women 30+ often face greater demands on their time, energy, and wellbeing than ever before. This stage of life is often marked by growing responsibilities, whether in their careers, relationships, family life, or personal commitments. As these demands increase, stress accumulates, energy becomes depleted, and self-care is frequently pushed to the bottom of the priority list.',
-      'My mission is to help women break free from this cycle and rediscover their strength, confidence, and inner balance.',
     ],
     img: 'letchance-ngassa',
     cta: { label: 'Read My Story', href: 'about/' },
