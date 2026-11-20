@@ -1128,3 +1128,6 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 .community__img img { width: 100%; height: auto; min-height: 0; max-height: none; object-fit: initial; }
 .community__body { border-radius: calc(var(--radius) + 8px); background: linear-gradient(150deg, #3a5642 0%, #2c4634 55%, #223829 100%); box-shadow: 0 24px 50px -26px rgba(34, 56, 41, .8); }
 @media (max-width: 900px) { .community__card { grid-template-columns: 1fr; } .community__img img { max-height: none; } }
+/* Page banners: keep heads in frame */
+.page-hero__bg { inset: 0 0 -12% 0; }
+.page-hero__bg img { object-position: 50% 12%; }
