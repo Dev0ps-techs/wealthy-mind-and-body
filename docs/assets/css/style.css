@@ -1170,3 +1170,15 @@ html.is-loading, html.is-loading body { overflow: hidden; }
   .page-hero--logo::before { background: rgba(0,0,0,.72); }
   .page-hero--logo .page-hero__bg img { object-position: 50% 50%; opacity: .55; }
 }
+/* Physical Products store card: keep the full tree pose figure in view */
+#physical-products > img { object-position: 50% 22%; opacity: .85; }
+/* Physical Products: photo on the right half so the whole figure shows */
+#physical-products { background: linear-gradient(150deg, #3a5642 0%, #2c4634 55%, #223829 100%); }
+#physical-products > img { left: auto; right: 0; width: 48%; object-fit: cover; object-position: 50% 18%; opacity: 1; }
+#physical-products::after { background: linear-gradient(90deg, #2c4634 48%, rgba(44,70,52,.55) 58%, rgba(44,70,52,0) 72%); }
+#physical-products .store__body { max-width: 58%; }
+@media (max-width: 600px) {
+  #physical-products > img { width: 100%; object-position: 50% 12%; }
+  #physical-products::after { background: linear-gradient(180deg, transparent 25%, rgba(34,56,41,.92)); }
+  #physical-products .store__body { max-width: none; }
+}

@@ -909,7 +909,7 @@ ${pageHero(r, { eyebrow: 'Shop · Coming soon', title: S.title, text: S.text, im
     <div class="stores">
       ${shopLinks.map((l, i) => `
       <a class="store" id="${i === 0 ? 'physical-products' : 'digital-products'}" href="${linkHref(r, l)}"${l.ext ? linkAttrs(l) : ''} data-reveal style="--d:${i * 0.1}s">
-        ${img(r, i === 0 ? 'fresh-juices' : 'yoga-childs-pose', '', { sizes: '(min-width: 900px) 50vw, 100vw' })}
+        ${img(r, i === 0 ? 'be-fit-flex-tree-pose' : 'yoga-childs-pose', '', { sizes: '(min-width: 900px) 50vw, 100vw' })}
         <span class="store__body">
           <span class="tag">${l.note}</span>
           <strong>${l.label}</strong>
