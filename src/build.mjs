@@ -281,8 +281,8 @@ function footer(r) {
 }
 
 /* ---------------- shared sections ---------------- */
-const pageHero = (r, { eyebrow, title, text = '', imgName, crumbs = [] }) => `
-<section class="page-hero">
+const pageHero = (r, { eyebrow, title, text = '', imgName, crumbs = [], cls = '' }) => `
+<section class="page-hero${cls ? ' ' + cls : ''}">
   <div class="page-hero__bg" data-parallax="0.25">${img(r, imgName, '', { eager: true })}</div>
   <div class="container page-hero__in">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="${r}">Home</a>${crumbs.map((c) => `<span>/</span>${c.href ? `<a href="${r}${c.href}">${c.label}</a>` : `<span aria-current="page">${c.label}</span>`}`).join('')}</nav>
@@ -893,7 +893,7 @@ function shopPage(r) {
   const S = C.shop;
   const digitalPosts = C.posts.filter((p) => p.type !== 'Article');
   return `
-${pageHero(r, { eyebrow: 'Shop · Coming soon', title: S.title, text: S.text, imgName: 'shop-collage', crumbs: [{ label: 'Shop' }] })}
+${pageHero(r, { eyebrow: 'Shop · Coming soon', title: S.title, text: S.text, imgName: 'be-fit-flex-logo', cls: 'page-hero--logo', crumbs: [{ label: 'Shop' }] })}
 <section class="section">
   <div class="container">
     <div class="notify card" data-reveal>
