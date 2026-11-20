@@ -1144,3 +1144,4 @@ html.is-loading, html.is-loading body { overflow: hidden; }
   .about-band .tt-card { width: min(420px, 100%); margin: 0 0 0 auto; }
 }
 .about-band .h-display { font-size: clamp(1.9rem, 3.4vw, 2.7rem); }
+.big-why { display: block; margin-bottom: 6px; font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; color: var(--sage-ink); }

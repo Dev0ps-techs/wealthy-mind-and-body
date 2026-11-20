@@ -463,7 +463,7 @@ export const home = {
     // TODO: replace with Letchance's own transformation story.
     story: [
       'I believe in the transformative power of body movement and self-discovery to unlock your potential and elevate your well-being. True wellness is not just about physical health, but a harmonious balance of the mind, body, and spirit.',
-      'My approach combines mindset coaching with yoga, breathwork and mindful movement — so you can build confidence, find calm, and feel at home in your body again.',
+      '<strong class="big-why">The Big WHY Behind Wealthy Mind & Body.</strong> I created WMB because research and experience have shown that women 30+ often face greater demands on their time, energy, and wellbeing than ever before. This stage of life is often marked by growing responsibilities, whether in their careers, relationships, family life, or personal commitments. As these demands increase, stress accumulates, energy becomes depleted, and self-care is frequently pushed to the bottom of the priority list.',
     ],
     img: 'letchance-ngassa',
     cta: { label: 'Read My Story', href: 'about/' },
