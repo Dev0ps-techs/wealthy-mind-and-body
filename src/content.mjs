@@ -463,6 +463,9 @@ export const home = {
     // TODO: replace with Letchance's own transformation story.
     story: [
       'Hello, I’m passionate about helping women 30+ reconnect with themselves and create lasting transformation from within.',
+      'As a Mindset and Wellness Coach and Mind & Body Movement Specialist, I believe that true wellness goes far beyond physical health. Real transformation happens when the mind, body, and breath work together in harmony, creating a strong foundation for a healthier, happier, and more fulfilling life.',
+      'Whether you book a 15-minute breakthrough session, a 60-minute coaching session, a Mind & Body Movement class, or a Breathwork session, my goal is to create a supportive space where you can pause, reset, and reconnect with yourself.',
+      'Through a combination of mindset coaching, intentional movement, and powerful breathing techniques, you’ll begin to experience positive shifts in your thoughts, energy, and overall wellbeing. Over time, these small shifts can lead to profound and lasting transformation.',
       '<strong class="big-why">The Big WHY Behind Wealthy Mind & Body.</strong> I created WMB because research and experience have shown that women 30+ often face greater demands on their time, energy, and wellbeing than ever before. This stage of life is often marked by growing responsibilities, whether in their careers, relationships, family life, or personal commitments. As these demands increase, stress accumulates, energy becomes depleted, and self-care is frequently pushed to the bottom of the priority list.',
       'My mission is to help women break free from this cycle and rediscover their strength, confidence, and inner balance.',
     ],
