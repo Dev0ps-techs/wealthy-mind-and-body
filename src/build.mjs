@@ -517,7 +517,7 @@ ${offerSection(r)}
 <section class="section resources" id="resources">
   <div class="container split-2 split-2--top">
     <div data-reveal>
-      <p class="eyebrow">Downloadables</p>
+      <p class="eyebrow eyebrow--strong">Downloadables</p>
       <h2 class="h-display">${H.resources.title}</h2>
       <p>${H.resources.text}</p>
       <form class="inline-form" data-subscribe="Free resources request">

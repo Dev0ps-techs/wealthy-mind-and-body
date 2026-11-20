@@ -1112,3 +1112,13 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 .btn--primary { --bg: #2c4634; --bd: #2c4634; --hover: #223829; }
 /* Bold, underlined section label */
 .eyebrow--strong { font-weight: 800; font-size: .86rem; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
+/* Free Resources: signature rose accents */
+.resource__cover { box-shadow: 5px 5px 0 var(--rose); }
+.resource__cover .icon-badge { background: var(--rose-grad); color: #fff; }
+.resource__body span { display: inline-block; width: fit-content; margin-top: 6px; padding: 3px 10px; border-radius: 999px; background: var(--rose-grad); color: var(--sage-ink); font-size: .7rem; font-weight: 700; letter-spacing: .12em; box-shadow: 0 6px 14px -8px rgba(163, 64, 95, .6); }
+.resource__arrow { width: 36px; height: 36px; padding: 8px; border-radius: 50%; border: 1px solid #cc7b92; color: var(--rose-deep); transition: background .3s, color .3s; }
+.resource:hover .resource__arrow { background: var(--rose-grad); color: var(--sage-ink); }
+.resource:hover { border-color: var(--rose); }
+/* Free Resources covers: bolder rose circles that stand out on the green */
+.resource__cover .icon-badge { width: 48px; height: 48px; background: linear-gradient(135deg, #eaa9bb 0%, #d27a95 50%, #b65f7c 100%); box-shadow: 0 0 0 3px rgba(242, 184, 200, .35), 0 8px 18px -6px rgba(163, 64, 95, .7); }
+.resource__cover .icon-badge .icon { width: 24px; height: 24px; stroke-width: 2; }
