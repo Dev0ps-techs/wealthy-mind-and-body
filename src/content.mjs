@@ -173,7 +173,7 @@ export const classes = {
       text: 'At Wealthy Mind and Body, we empower individuals to shift their perspectives, overcome obstacles, and cultivate a positive mindset. Our tailored lessons combine proven strategies and personalized support to help you achieve your goals, boost resilience, and enhance overall well-being.',
     },
     {
-      title: 'YogaFit For Everyone',
+      title: 'Mind & Body Movement Sessions',
       days: '',
       hours: '8:30 – 17:00',
       img: 'yogafit-collage',
