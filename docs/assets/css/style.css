@@ -1122,3 +1122,9 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 /* Free Resources covers: bolder rose circles that stand out on the green */
 .resource__cover .icon-badge { width: 48px; height: 48px; background: linear-gradient(135deg, #eaa9bb 0%, #d27a95 50%, #b65f7c 100%); box-shadow: 0 0 0 3px rgba(242, 184, 200, .35), 0 8px 18px -6px rgba(163, 64, 95, .7); }
 .resource__cover .icon-badge .icon { width: 24px; height: 24px; stroke-width: 2; }
+/* Community: photo shown whole, separate from the green panel */
+.community__card { background: none; box-shadow: none; overflow: visible; border-radius: 0; gap: clamp(20px, 3vw, 36px); align-items: center; grid-template-columns: 1.05fr 1fr; }
+.community__img { border-radius: calc(var(--radius) + 8px); overflow: hidden; box-shadow: var(--shadow-lg); line-height: 0; }
+.community__img img { width: 100%; height: auto; min-height: 0; max-height: none; object-fit: initial; }
+.community__body { border-radius: calc(var(--radius) + 8px); background: linear-gradient(150deg, #3a5642 0%, #2c4634 55%, #223829 100%); box-shadow: 0 24px 50px -26px rgba(34, 56, 41, .8); }
+@media (max-width: 900px) { .community__card { grid-template-columns: 1fr; } .community__img img { max-height: none; } }
