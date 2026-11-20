@@ -464,6 +464,7 @@ export const home = {
     story: [
       'I believe in the transformative power of body movement and self-discovery to unlock your potential and elevate your well-being. True wellness is not just about physical health, but a harmonious balance of the mind, body, and spirit.',
       '<strong class="big-why">The Big WHY Behind Wealthy Mind & Body.</strong> I created WMB because research and experience have shown that women 30+ often face greater demands on their time, energy, and wellbeing than ever before. This stage of life is often marked by growing responsibilities, whether in their careers, relationships, family life, or personal commitments. As these demands increase, stress accumulates, energy becomes depleted, and self-care is frequently pushed to the bottom of the priority list.',
+      'My mission is to help women break free from this cycle and rediscover their strength, confidence, and inner balance.',
     ],
     img: 'letchance-ngassa',
     cta: { label: 'Read My Story', href: 'about/' },
