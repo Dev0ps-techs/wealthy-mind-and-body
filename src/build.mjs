@@ -446,7 +446,7 @@ function aboutBand(r) {
       <p class="eyebrow eyebrow--strong">Wealthy Mind &amp; Body</p>
       <h2 class="h-display">${C.aboutMBM.text}</h2>
       <p>${C.aboutMBM.belief}</p>
-      <blockquote class="mission"><span>${C.aboutMBM.missionLabel}</span>${C.aboutMBM.mission}</blockquote>
+      <blockquote class="mission"><span>${C.aboutMBM.missionLabel}</span>${C.aboutMBM.mission}<p class="mission__text">Our mission is to empower women aged 30 and above to become intentional about their mental, physical and emotional well-being through a holistic approach to personal transformation.</p></blockquote>
       ${btn(r + 'about/', 'Read More', 'btn btn--outline')}
     </div>
   </div>
