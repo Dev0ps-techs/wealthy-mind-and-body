@@ -12,7 +12,7 @@ const PREVIEW = !!process.env.PREVIEW;
 const OUT = path.resolve(__dirname, '..', PREVIEW ? 'docs-preview' : 'docs');
 // Absolute base path where the site is hosted. Used only by 404.html, which
 // GitHub Pages serves from any URL depth. Set BASE=/ when using a custom domain.
-const BASE = process.env.BASE ?? '/wealthy-mind-and-body/';
+const BASE = process.env.BASE ?? '/';
 const { site } = C;
 
 /* ---------------- helpers ---------------- */
@@ -1153,5 +1153,6 @@ const urls = [...pages.map((p) => p[0]), ...C.posts.map((p) => `blog/${p.slug}/i
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${u}</loc></url>`).join('\n')}\n</urlset>\n`);
 write('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${site.url}/sitemap.xml\n`);
 write('.nojekyll', '');
+write('CNAME', (process.env.CNAME ?? 'wealthymindandbody.com') + '\n');
 
 console.log(`Built ${pages.length + C.posts.length + 1} pages + ${Object.keys(redirects).length - 1} redirects → ${path.relative(process.cwd(), OUT) || OUT}`);
