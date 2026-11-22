@@ -275,6 +275,7 @@ function footer(r) {
   </div>
   <div class="container footer__bottom">
     <p>Copyright © <span data-year>2026</span> ${site.domain}. All rights reserved.</p>
+    <p class="footer__credit">Website built by DevOps Engineer Lewis</p>
     <a href="${r}privacy/">Privacy Policy</a>
   </div>
 </footer>`;
