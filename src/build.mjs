@@ -185,7 +185,7 @@ ${base ? `<base href="${base}">` : ''}
 </div>
 <header class="header">
   <div class="container header__in">
-    <a class="logo" href="${r}" aria-label="${site.name} — home">${wordmark()}</a>
+    <a class="logo" href="${r}" aria-label="${site.name} — home">${wordmark()}<span class="logo__tag">Inspire. Empower. Transform.</span></a>
     <span class="w30 w30--header">${site.audience}</span>
     <nav class="nav" id="site-nav" aria-label="Main">
       <ul class="nav__list">${navItems}</ul>
