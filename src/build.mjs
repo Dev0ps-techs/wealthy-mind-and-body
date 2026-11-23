@@ -168,7 +168,7 @@ ${base ? `<base href="${base}">` : ''}
   <div class="loader__in">
     <svg class="loader__mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round">${ICONS.lotus}</svg>
     <span class="loader__name">${wordmark()}</span>
-    <span class="loader__tag">${site.tagline}</span>
+    <span class="loader__tag">Inspire. Empower. Transform.</span>
     <span class="loader__bar"><i></i></span>
   </div>
 </div>
@@ -249,7 +249,7 @@ function footer(r) {
   <div class="container footer__grid">
     <div>
       <a class="logo logo--light" href="${r}">${wordmark()}</a>
-      <p class="footer__tag">${site.tagline}</p>
+      <p class="footer__tag">Inspire. Empower. Transform.</p>
       <p class="w30 w30--footer">${site.audienceLine}</p>
       <p class="footer__about">${site.about}</p>
       ${socialHandles()}
