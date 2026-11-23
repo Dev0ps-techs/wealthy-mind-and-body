@@ -32,7 +32,7 @@ export const site = {
   social: [
     { name: 'Instagram', handle: '@mindsetwith_letchance', icon: 'instagram', url: 'https://www.instagram.com/mindsetwith_letchance/' },
     { name: 'YouTube', handle: '@mindandbodymovement', icon: 'youtube', url: 'https://www.youtube.com/@mindandbodymovement' },
-    { name: 'Facebook', handle: 'Letchance Ngassa', icon: 'facebook', url: 'https://www.facebook.com/chanceline.ngassa' },
+    { name: 'Facebook', handle: 'Letchance Ngassa', icon: 'facebook', url: 'https://www.facebook.com/Mindsetwith.letchance' },
     { name: 'LinkedIn', icon: 'linkedin', url: 'https://www.linkedin.com/in/lee-chance-yoga-8363981aa/' },
     { name: 'X (Twitter)', icon: 'x', url: 'https://twitter.com/LeeChance77' },
   ],
