@@ -21,9 +21,9 @@ export const site = {
   location: 'Dubai, UAE',
   locationNote:
     'Available for private classes or group classes at home, schools, corporates or hospitals',
-  phone: '+971552807783',
-  phoneDisplay: '(+971) 55 280 7783',
-  whatsapp: '971552807783',
+  phone: '+971552630650',
+  phoneDisplay: '(+971) 55 263 0650',
+  whatsapp: '971552630650',
   emails: ['letchancengassa@gmail.com', 'info@mbm.tips'],
   description:
     'For women 30+: where modern wellness meets mind, body & soul transformation. Mindset mastery, mindful movement and soulful living with Letchance Ngassa — live daily, online worldwide and in person in Dubai. Mind and body wellness through movement, breathwork and coaching in Dubai, UAE. Mindset coaching, YogaFit, Hatha, Prenatal, Yin and Children’s Yoga — in person across the UAE and online worldwide.',
