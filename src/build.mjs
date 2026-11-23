@@ -239,7 +239,7 @@ function footer(r) {
   <div class="footer__cta">
     <div class="container footer__cta-in" data-reveal>
       <p class="eyebrow eyebrow--light">${site.positioning}</p>
-      <h2>${site.tagline.replace('Empower Your Body.', '<br>Empower Your Body.<br>')}</h2>
+      <h2>Inspire.<br>Empower.<br>Transform.</h2>
       <div class="btn-row">
         ${btn(`${r}booking/`, 'Book a session', 'btn btn--rose')}
         <a class="btn btn--ghost-light" href="https://wa.me/${site.whatsapp}" target="_blank" rel="noopener">${icon('whatsapp')}<span>WhatsApp us</span></a>
