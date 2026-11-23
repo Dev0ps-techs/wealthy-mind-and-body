@@ -4,6 +4,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as C from './content.mjs';
+import { createHash } from 'node:crypto';
+const ASSET_V = createHash('md5').update(fs.readFileSync(new URL('./assets/css/style.css', import.meta.url))).update(fs.readFileSync(new URL('./assets/js/main.js', import.meta.url))).digest('hex').slice(0, 8);
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SRC = __dirname;
@@ -159,7 +161,7 @@ ${base ? `<base href="${base}">` : ''}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="${r}assets/css/style.css">
+<link rel="stylesheet" href="${r}assets/css/style.css?v=${ASSET_V}">
 <script type="application/ld+json">${JSON.stringify(jsonld)}</script>
 <script>(function(d){d.classList.add('js','is-loading');if('scrollRestoration' in history)history.scrollRestoration='manual';try{if(sessionStorage.getItem('wmb-seen'))d.classList.add('quick-load')}catch(e){}})(document.documentElement)</script>
 </head>
@@ -215,7 +217,7 @@ ${footer(r)}
   <button class="video-modal__close" aria-label="Close image">${icon('close')}</button>
 </dialog>
 <div class="toast" role="status" aria-live="polite"></div>
-<script src="${r}assets/js/main.js" defer></script>
+<script src="${r}assets/js/main.js?v=${ASSET_V}" defer></script>
 </body>
 </html>
 `;
