@@ -226,8 +226,12 @@ function wordmark() {
 
 function socialLinks() {
   return site.social
-    .map((s) => `<a href="${s.url}" target="_blank" rel="noopener" aria-label="${s.name}">${icon(s.icon)}</a>`)
+    .map((s) => `<a href="${s.url}" target="_blank" rel="noopener" aria-label="${s.name}${s.handle ? ' ' + s.handle : ''}" title="${s.name}${s.handle ? ': ' + s.handle : ''}">${icon(s.icon)}</a>`)
     .join('');
+}
+
+function socialHandles(cls = '') {
+  return `<ul class="handles ${cls}">${site.social.map((s) => `<li><a href="${s.url}" target="_blank" rel="noopener">${icon(s.icon)}<span><small>${s.name}</small>${s.handle || s.name}</span></a></li>`).join('')}</ul>`;
 }
 
 function footer(r) {
@@ -248,7 +252,7 @@ function footer(r) {
       <p class="footer__tag">${site.tagline}</p>
       <p class="w30 w30--footer">${site.audienceLine}</p>
       <p class="footer__about">${site.about}</p>
-      <div class="social">${socialLinks()}</div>
+      ${socialHandles()}
     </div>
     <div>
       <h3>Our Services</h3>
@@ -1064,7 +1068,7 @@ ${pageHero(r, { eyebrow: 'Contacts', title: 'Let’s talk wellness', text: C.con
         <button class="btn btn--primary" type="submit" data-via="whatsapp">${icon('whatsapp')}<span>Send via WhatsApp</span></button>
         <button class="btn btn--outline" type="submit" data-via="email">${icon('mail')}<span>Send via email</span></button>
       </div>
-      <div class="social social--dark"><span>Follow along</span>${socialLinks()}</div>
+      <div class="social--dark"><p class="handles__title">Follow along</p>${socialHandles('handles--dark')}</div>
     </form>
   </div>
 </section>`;

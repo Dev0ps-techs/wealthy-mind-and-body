@@ -30,9 +30,9 @@ export const site = {
   about:
     'At our wellness center, we focus on holistic growth by combining mindset coaching with yoga sessions. Our approach is designed to enhance both flexibility and strength, promoting overall well-being and personal development.',
   social: [
-    { name: 'Instagram', icon: 'instagram', url: 'https://www.instagram.com/leechance_ngassa/' },
-    { name: 'YouTube', icon: 'youtube', url: 'https://www.youtube.com/c/LeeChanceYoga' },
-    { name: 'Facebook', icon: 'facebook', url: 'https://www.facebook.com/chanceline.ngassa' },
+    { name: 'Instagram', handle: '@mindsetwith_letchance', icon: 'instagram', url: 'https://www.instagram.com/mindsetwith_letchance/' },
+    { name: 'YouTube', handle: '@mindandbodymovement', icon: 'youtube', url: 'https://www.youtube.com/@mindandbodymovement' },
+    { name: 'Facebook', handle: 'Letchance Ngassa', icon: 'facebook', url: 'https://www.facebook.com/chanceline.ngassa' },
     { name: 'LinkedIn', icon: 'linkedin', url: 'https://www.linkedin.com/in/lee-chance-yoga-8363981aa/' },
     { name: 'X (Twitter)', icon: 'x', url: 'https://twitter.com/LeeChance77' },
   ],

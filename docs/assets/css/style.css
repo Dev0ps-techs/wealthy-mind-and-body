@@ -1182,3 +1182,20 @@ html.is-loading, html.is-loading body { overflow: hidden; }
   #physical-products::after { background: linear-gradient(180deg, transparent 25%, rgba(34,56,41,.92)); }
   #physical-products .store__body { max-width: none; }
 }
+/* Phones: the first (pink) slide shows its tree-pose photo under the text too */
+@media (max-width: 900px) {
+  .slide--pink .slide__photo { display: block; padding: 0 0 96px; }
+  .slide--pink .slide__content { padding-bottom: 28px; }
+  .slide--pink .slide__arch { width: min(78vw, 340px); max-height: 60vh; border-width: 6px; }
+}
+
+/* Social media handles */
+.handles { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 10px; }
+.handles a { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+.handles .icon { width: 20px; height: 20px; flex: none; }
+.handles span { display: flex; flex-direction: column; line-height: 1.25; font-size: .95rem; word-break: break-word; }
+.handles small { font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; opacity: .7; }
+.handles a:hover span { text-decoration: underline; text-underline-offset: 3px; }
+.handles--dark { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+.handles--dark .icon { color: var(--rose); }
+.handles__title { font-weight: 600; font-size: .9rem; margin: 0; }
