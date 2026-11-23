@@ -178,8 +178,9 @@ ${base ? `<base href="${base}">` : ''}
   <div class="container topbar__in">
     <span class="topbar__left"><span class="w30">For ${site.audience}</span><a class="topbar__live" href="${r}#live"><span class="live-dot"></span> Live every evening · 5:00 PM Dubai time</a></span>
     <span class="topbar__links">
-      <a href="tel:${site.phone}">${icon('phone')} ${site.phoneDisplay}</a>
-      <a href="mailto:${site.emails[0]}">${icon('mail')} ${site.emails[0]}</a>
+      <a class="topbar__phone" href="tel:${site.phone}">${icon('phone')} ${site.phoneDisplay}</a>
+      <a class="topbar__email" href="mailto:${site.emails[0]}">${icon('mail')} ${site.emails[0]}</a>
+      ${site.social.filter((x) => ['Instagram', 'YouTube'].includes(x.name)).map((x) => `<a class="topbar__soc" href="${x.url}" target="_blank" rel="noopener" aria-label="${x.name} ${x.handle || ''}" title="${x.name}: ${x.handle || ''}">${icon(x.icon)}</a>`).join('')}
     </span>
   </div>
 </div>
